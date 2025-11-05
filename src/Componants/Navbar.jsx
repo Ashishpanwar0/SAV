@@ -1,258 +1,364 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Menu, X } from "lucide-react";
 import samoonlogo from "../assets/SamoonLogo/samoonadarshvidhyalayalogo.png";
 
-const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [activeMenu, setActiveMenu] = useState("");
-  const [subMenu, setSubMenu] = useState("");
-  const [isSticky, setIsSticky] = useState(false);
+export default function Navbar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [dropdown, setDropdown] = useState("");
+  const [subDropdown, setSubDropdown] = useState("");
+  const [sticky, setSticky] = useState(false);
   const navRef = useRef(null);
 
-  // Sticky Navbar on scroll
+  // Sticky on scroll
   useEffect(() => {
-    const handleScroll = () => setIsSticky(window.scrollY > 20);
+    const handleScroll = () => setSticky(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close dropdowns when clicking outside
+  // Close on outside click
   useEffect(() => {
-    const handleClickOutside = (e) => {
+    const close = (e) => {
       if (navRef.current && !navRef.current.contains(e.target)) {
-        setActiveMenu("");
-        setSubMenu("");
+        setDropdown("");
+        setSubDropdown("");
       }
     };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", close);
+    return () => document.removeEventListener("mousedown", close);
   }, []);
 
-  const toggleMenu = (menu) => {
-    setActiveMenu(activeMenu === menu ? "" : menu);
-    setSubMenu("");
+  const toggleDropdown = (menu) => {
+    setDropdown(dropdown === menu ? "" : menu);
+    setSubDropdown("");
   };
 
-  const toggleSubMenu = (submenu) => {
-    setSubMenu(subMenu === submenu ? "" : submenu);
+  const toggleSub = (sub) => {
+    setSubDropdown(subDropdown === sub ? "" : sub);
+  };
+
+  const closeAll = () => {
+    setMobileOpen(false);
+    setDropdown("");
+    setSubDropdown("");
   };
 
   return (
-    <header ref={navRef} className="w-full z-50 bg-white shadow-sm">
-      {/* ==== Top Info Bar ==== */}
-      <div className="hidden lg:flex justify-end items-center text-sm text-gray-700 px-10 pt-6 border-gray-200">
-        <div className="flex items-center gap-2 mr-5">
-          <Phone className="w-4 h-4 text-green-700" />
-          <span>+91-9027001689</span>
-        </div>
-        <div className="flex items-center gap-2 mr-5">
-          <Mail className="w-4 h-4 text-green-700" />
-          <span>info@samoonfoundation.org</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <MapPin className="w-4 h-4 text-green-700" />
-          <span>Gangaad, Mori Block, Uttarkashi, Uttarakhand, India 249185</span>
+    <header ref={navRef} className="w-full z-50 bg-white">
+      {/* Top Bar - Desktop Only */}
+      <div className="hidden lg:block text-sm pt-2">
+        <div className="max-w-7xl mx-auto px-6 py-2 flex justify-end gap-8">
+          <div className="flex items-center gap-2">
+            <Phone className="w-4 h-4" />
+            <span>+91-9027001689</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Mail className="w-4 h-4" />
+            <span>info@samoonfoundation.org</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <MapPin className="w-4 h-4" />
+            <span>Gangaad, Block - Mori, District - Uttarakashi, Uttarakhand, India 249185</span>
+          </div>
         </div>
       </div>
 
-      {/* ==== Main Navbar ==== */}
+      {/* Main Navbar */}
       <nav
-        className={`transition-all duration-300 ${
-          isSticky ? "sticky top-0 shadow-md bg-white" : ""
-        }`}
+        className={`${
+          sticky
+            ? "fixed top-0 left-0 right-0 shadow-lg bg-white/95 backdrop-blur-sm"
+            : "relative"
+        } transition-all duration-300 z-50`}
       >
-        <div className="flex items-center justify-between px-4 lg:px-10 py-2 lg:py-1">
-          {/* === Logo === */}
-          <Link to="/" onClick={() => setMenuOpen(false)}>
-            <img
-              src={samoonlogo}
-              alt="Samoon Logo"
-              className="lg:w-45 w-32 h-auto"
-            />
-          </Link>
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-1">
+          <div className="flex items-center justify-between h-16 lg:h-auto">
+            {/* Logo */}
+            <Link to="/" onClick={closeAll}>
+              <img
+                src={samoonlogo}
+                alt="Samoon Adarsh Vidyalaya"
+                className="h-12 lg:h-20 w-auto"
+              />
+            </Link>
 
-          {/* === Mobile Menu Button === */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="lg:hidden text-2xl text-gray-800 focus:outline-none"
-          >
-            {menuOpen ? "✖" : "☰"}
-          </button>
+            {/* Desktop Menu */}
+            <ul className="hidden lg:flex items-center gap-1 text-sm">
+              <NavItem to="/" onClick={closeAll}>
+                HOME
+              </NavItem>
 
-          {/* === Navigation Menu === */}
-          <ul
-            className={`absolute lg:static bg-white w-full lg:w-auto left-0 transition-all duration-300 ease-in-out shadow-md lg:shadow-none ${
-              menuOpen ? "top-[100%] opacity-100" : "opacity-0 lg:opacity-100 hidden lg:flex"
-            } flex-col lg:flex-row text-sm lg:items-center`}
-          >
-            {/* HOME */}
-            <li className="px-5 py-3 hover:text-green-700">
-              <Link to="/" onClick={() => setMenuOpen(false)}>HOME</Link>
-            </li>
-
-            {/* ABOUT US */}
-            <li className="relative px-5 py-3">
-              <button
-                onClick={() => toggleMenu("about")}
-                className="flex justify-between items-center w-full hover:text-green-700"
+              <Dropdown
+                label="ABOUT US"
+                isOpen={dropdown === "about"}
+                onToggle={() => toggleDropdown("about")}
               >
-                ABOUT US <span>▾</span>
-              </button>
-              {activeMenu === "about" && (
-                <ul className="lg:absolute bg-white shadow-lg rounded-md w-60 mt-1 z-40">
-                  {/* ABOUT SAV-OSLA */}
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <button
-                      onClick={() => toggleSubMenu("about-savosla")}
-                      className="w-full text-left flex justify-between"
-                    >
-                      About Sav-Osla <span>›</span>
-                    </button>
-                    {subMenu === "about-savosla" && (
-                      <ul className="lg:absolute bg-white shadow-lg rounded-md w-56 mt-1 z-50">
-                        <li className="px-4 py-2 hover:bg-gray-100">
-                          <Link to="/about-school" onClick={() => setMenuOpen(false)}>About School</Link>
-                        </li>
-                        <li className="px-4 py-2 hover:bg-gray-100">
-                          <Link to="/principal-message" onClick={() => setMenuOpen(false)}>Principal Message</Link>
-                        </li>
-                        <li className="px-4 py-2 hover:bg-gray-100">
-                          <Link to="/chairman-message" onClick={() => setMenuOpen(false)}>Chairman Message</Link>
-                        </li>
-                      </ul>
-                    )}
-                  </li>
+                <SubDropdown
+                  label="About SAV-Osla"
+                  isOpen={subDropdown === "sav"}
+                  onToggle={() => toggleSub("sav")}
+                >
+                  <MenuLink to="/about-school" onClick={closeAll}>
+                    About School
+                  </MenuLink>
+                  <MenuLink to="/principal-message" onClick={closeAll}>
+                    Principal Message
+                  </MenuLink>
+                  <MenuLink to="/chairman-message" onClick={closeAll}>
+                    Chairman Message
+                  </MenuLink>
+                </SubDropdown>
 
-                  {/* About Samoon Foundation */}
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/about-samoon-foundation" onClick={() => setMenuOpen(false)}>
-                      About Samoon Foundation
-                    </Link>
-                  </li>
+                <MenuLink to="/about-samoon-foundation" onClick={closeAll}>
+                  About Samoon Foundation
+                </MenuLink>
+                <MenuLink to="/our-visionary" onClick={closeAll}>
+                  Our Visionary
+                </MenuLink>
 
-                  {/* Our Visionary */}
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/our-visionary" onClick={() => setMenuOpen(false)}>Our Visionary</Link>
-                  </li>
+                <SubDropdown
+                  label="Financial Report"
+                  isOpen={subDropdown === "financial"}
+                  onToggle={() => toggleSub("financial")}
+                >
+                  <MenuLink to="/financial-report" onClick={closeAll}>
+                    Financial Report
+                  </MenuLink>
+                  <MenuLink to="/audit-report" onClick={closeAll}>
+                    Audit Report
+                  </MenuLink>
+                </SubDropdown>
 
-                  {/* Financial Report */}
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <button
-                      onClick={() => toggleSubMenu("financial")}
-                      className="w-full text-left flex justify-between"
-                    >
-                      Financial Report <span>›</span>
-                    </button>
-                    {subMenu === "financial" && (
-                      <ul className="lg:absolute bg-white shadow-lg rounded-md w-56 mt-1 z-50">
-                        <li className="px-4 py-2 hover:bg-gray-100">
-                          <Link to="/financial-report" onClick={() => setMenuOpen(false)}>Financial Report</Link>
-                        </li>
-                        <li className="px-4 py-2 hover:bg-gray-100">
-                          <Link to="/audit-report" onClick={() => setMenuOpen(false)}>Audit Report</Link>
-                        </li>
-                      </ul>
-                    )}
-                  </li>
+                <MenuLink to="/press-release" onClick={closeAll}>
+                  Press Release
+                </MenuLink>
+              </Dropdown>
 
-                  {/* Press Release */}
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/press-release" onClick={() => setMenuOpen(false)}>Press Release</Link>
-                  </li>
-                </ul>
-              )}
-            </li>
-
-            {/* ACADEMICS */}
-            <li className="relative px-5 py-3">
-              <button
-                onClick={() => toggleMenu("academics")}
-                className="flex justify-between items-center w-full hover:text-green-700"
+              <Dropdown
+                label="ACADEMICS"
+                isOpen={dropdown === "academics"}
+                onToggle={() => toggleDropdown("academics")}
               >
-                ACADEMICS <span>▾</span>
-              </button>
-              {activeMenu === "academics" && (
-                <ul className="lg:absolute bg-white shadow-lg rounded-md w-56 mt-1 z-40">
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/academic-facilities" onClick={() => setMenuOpen(false)}>Academic Facilities</Link>
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/our-teachers" onClick={() => setMenuOpen(false)}>Our Teachers</Link>
-                  </li>
-                </ul>
-              )}
-            </li>
+                <MenuLink to="/academic-facilities" onClick={closeAll}>
+                  Academic Facilities
+                </MenuLink>
+                <MenuLink to="/our-teachers" onClick={closeAll}>
+                  Our Teachers
+                </MenuLink>
+              </Dropdown>
 
-            {/* ADMISSION */}
-            <li className="relative px-5 py-3">
-              <button
-                onClick={() => toggleMenu("admission")}
-                className="flex justify-between items-center w-full hover:text-green-700"
+              <Dropdown
+                label="ADMISSION"
+                isOpen={dropdown === "admission"}
+                onToggle={() => toggleDropdown("admission")}
               >
-                ADMISSION <span>▾</span>
-              </button>
-              {activeMenu === "admission" && (
-                <ul className="lg:absolute bg-white shadow-lg rounded-md w-56 mt-1 z-40">
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/registration-process" onClick={() => setMenuOpen(false)}>Registration Process</Link>
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/registration-form" onClick={() => setMenuOpen(false)}>Registration Form</Link>
-                  </li>
-                </ul>
-              )}
-            </li>
+                <MenuLink to="/registration-process" onClick={closeAll}>
+                  Registration Process
+                </MenuLink>
+                <MenuLink to="/registration-form" onClick={closeAll}>
+                  Registration Form
+                </MenuLink>
+              </Dropdown>
 
-            {/* OUR ACHIEVEMENTS */}
-            <li className="relative px-5 py-3">
-              <button
-                onClick={() => toggleMenu("achievements")}
-                className="flex justify-between items-center w-full hover:text-green-700"
+              <Dropdown
+                label="OUR ACHIEVEMENTS"
+                isOpen={dropdown === "achievements"}
+                onToggle={() => toggleDropdown("achievements")}
               >
-                OUR ACHIEVEMENTS <span>▾</span>
-              </button>
-              {activeMenu === "achievements" && (
-                <ul className="lg:absolute bg-white shadow-lg rounded-md w-56 mt-1 z-40">
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/certificates" onClick={() => setMenuOpen(false)}>Certificates</Link>
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/awards" onClick={() => setMenuOpen(false)}>Awards</Link>
-                  </li>
-                </ul>
-              )}
-            </li>
+                <MenuLink to="/certificates" onClick={closeAll}>
+                  Certificates
+                </MenuLink>
+                <MenuLink to="/awards" onClick={closeAll}>
+                  Awards
+                </MenuLink>
+              </Dropdown>
 
-            {/* PHOTO GALLERY */}
-            <li className="px-5 py-3 hover:text-green-700">
-              <Link to="/photo-gallery" onClick={() => setMenuOpen(false)}>PHOTO GALLERY</Link>
-            </li>
+              <NavItem to="/photo-gallery" onClick={closeAll}>
+                PHOTO GALLERY
+              </NavItem>
 
-            {/* CONTACT US */}
-            <li className="relative px-5 py-3">
-              <button
-                onClick={() => toggleMenu("contact")}
-                className="flex justify-between items-center w-full hover:text-green-700"
+              <Dropdown
+                label="CONTACT US"
+                isOpen={dropdown === "contact"}
+                onToggle={() => toggleDropdown("contact")}
               >
-                CONTACT US <span>▾</span>
-              </button>
-              {activeMenu === "contact" && (
-                <ul className="lg:absolute bg-white shadow-lg rounded-md w-56 mt-1 z-40">
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/career-with-us" onClick={() => setMenuOpen(false)}>Career With Us</Link>
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link to="/student-scholarship-form" onClick={() => setMenuOpen(false)}>Student Scholarship Form</Link>
-                  </li>
-                </ul>
-              )}
-            </li>
-          </ul>
+                <MenuLink to="/career-with-us" onClick={closeAll}>
+                  Career With Us
+                </MenuLink>
+                <MenuLink to="/student-scholarship-form" onClick={closeAll}>
+                  Student Scholarship Form
+                </MenuLink>
+              </Dropdown>
+            </ul>
+
+            {/* Mobile Toggle */}
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="lg:hidden p-2"
+            >
+              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <div
+          className={`lg:hidden fixed inset-x-0 top-16 bg-white shadow-xl transition-all duration-300 overflow-y-auto ${
+            mobileOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="px-4 py-4 space-y-1 text-sm font-medium">
+            <MobileItem to="/" onClick={closeAll}>HOME</MobileItem>
+
+            <MobileDropdown label="ABOUT US">
+              <MobileSubDropdown label="About SAV-Osla">
+                <MobileLink to="/about-school" onClick={closeAll}>About School</MobileLink>
+                <MobileLink to="/principal-message" onClick={closeAll}>Principal Message</MobileLink>
+                <MobileLink to="/chairman-message" onClick={closeAll}>Chairman Message</MobileLink>
+              </MobileSubDropdown>
+
+              <MobileLink to="/about-samoon-foundation" onClick={closeAll}>
+                About Samoon Foundation
+              </MobileLink>
+              <MobileLink to="/our-visionary" onClick={closeAll}>Our Visionary</MobileLink>
+
+              <MobileSubDropdown label="Financial Report">
+                <MobileLink to="/financial-report" onClick={closeAll}>Financial Report</MobileLink>
+                <MobileLink to="/audit-report" onClick={closeAll}>Audit Report</MobileLink>
+              </MobileSubDropdown>
+
+              <MobileLink to="/press-release" onClick={closeAll}>Press Release</MobileLink>
+            </MobileDropdown>
+
+            <MobileDropdown label="ACADEMICS">
+              <MobileLink to="/academic-facilities" onClick={closeAll}>Academic Facilities</MobileLink>
+              <MobileLink to="/our-teachers" onClick={closeAll}>Our Teachers</MobileLink>
+            </MobileDropdown>
+
+            <MobileDropdown label="ADMISSION">
+              <MobileLink to="/registration-process" onClick={closeAll}>Registration Process</MobileLink>
+              <MobileLink to="/registration-form" onClick={closeAll}>Registration Form</MobileLink>
+            </MobileDropdown>
+
+            <MobileDropdown label="OUR ACHIEVEMENTS">
+              <MobileLink to="/certificates" onClick={closeAll}>Certificates</MobileLink>
+              <MobileLink to="/awards" onClick={closeAll}>Awards</MobileLink>
+            </MobileDropdown>
+
+            <MobileItem to="/photo-gallery" onClick={closeAll}>PHOTO GALLERY</MobileItem>
+
+            <MobileDropdown label="CONTACT US">
+              <MobileLink to="/career-with-us" onClick={closeAll}>Career With Us</MobileLink>
+              <MobileLink to="/student-scholarship-form" onClick={closeAll}>
+                Student Scholarship Form
+              </MobileLink>
+            </MobileDropdown>
+          </div>
         </div>
       </nav>
     </header>
   );
+}
+
+/* Reusable Components */
+const NavItem = ({ to, children, onClick }) => (
+  <li className="px-4 py-3 hover:text-cyan-600 transition">
+    <Link to={to} onClick={onClick}>{children}</Link>
+  </li>
+);
+
+const Dropdown = ({ label, isOpen, onToggle, children }) => (
+  <li className="relative group">
+    <button
+      onClick={onToggle}
+      className="px-4 py-3 flex items-center gap-1 hover:text-cyan-600 transition w-full"
+    >
+      {label} <span className="text-xs">▼</span>
+    </button>
+    {isOpen && (
+      <ul className="absolute left-0 top-full mt-1 bg-white shadow-xl rounded-lg w-64 border border-gray-100">
+        {children}
+      </ul>
+    )}
+  </li>
+);
+
+const SubDropdown = ({ label, isOpen, onToggle, children }) => (
+  <li className="group">
+    <button
+      onClick={onToggle}
+      className="w-full text-left px-5 py-3 flex justify-between items-center hover:bg-gray-50"
+    >
+      {label} <span>›</span>
+    </button>
+    {isOpen && (
+      <ul className="absolute left-full top-0 ml-1 bg-white shadow-xl rounded-lg w-56 border border-gray-100">
+        {children}
+      </ul>
+    )}
+  </li>
+);
+
+const MenuLink = ({ to, children, onClick }) => (
+  <li>
+    <Link
+      to={to}
+      onClick={onClick}
+      className="block px-5 py-3 hover:bg-gray-50 transition"
+    >
+      {children}
+    </Link>
+  </li>
+);
+
+/* Mobile Components */
+const MobileItem = ({ to, children, onClick }) => (
+  <Link
+    to={to}
+    onClick={onClick}
+    className="block px-4 py-3 hover:bg-cyan-50 hover:text-cyan-700 rounded"
+  >
+    {children}
+  </Link>
+);
+
+const MobileDropdown = ({ label, children }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border-b border-gray-100">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full px-4 py-3 flex justify-between items-center hover:bg-cyan-50"
+      >
+        {label} <span>{open ? "−" : "+"}</span>
+      </button>
+      {open && <div className="pl-6 bg-gray-50">{children}</div>}
+    </div>
+  );
 };
 
-export default Navbar;
+const MobileSubDropdown = ({ label, children }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="py-2">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full text-left px-4 py-2 flex justify-between text-sm font-medium"
+      >
+        {label} <span>{open ? "−" : "+"}</span>
+      </button>
+      {open && <div className="pl-4">{children}</div>}
+    </div>
+  );
+};
+
+const MobileLink = ({ to, children, onClick }) => (
+  <Link
+    to={to}
+    onClick={onClick}
+    className="block py-2 text-sm text-gray-700 hover:text-cyan-700"
+  >
+    {children}
+  </Link>
+);

@@ -7,7 +7,7 @@ import { Autoplay } from "swiper/modules";
 import img1 from "../assets/SliderImages/SAV1.webp";
 import img2 from "../assets/SliderImages/SAV2.webp";
 import img3 from "../assets/SliderImages/SAV3.jpg";
-import img4 from "../assets/SliderImages/SAV4.jpg"; // add your 4th image
+import img4 from "../assets/SliderImages/SAV4.jpg";
 
 const cards = [
   {
@@ -60,13 +60,13 @@ export default function HomeCard() {
         >
           {cards.map((card, i) => (
             <SwiperSlide key={i}>
-              <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+              <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
                 {/* Image */}
                 <div className="h-48 overflow-hidden">
                   <img
                     src={card.img}
                     alt={card.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
 
@@ -93,6 +93,21 @@ export default function HomeCard() {
           ))}
         </Swiper>
       </div>
+        {/* About Samoon Adarsh Vidhyalaya */}
+        <section className="lg:px-5 px-5">
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 lg:px-5 lg:mt-10 h-auto">
+            <div>
+              <img src={img3} alt="" className="rounded-xl"/>
+            </div>
+            <div className="lg:pt-1">
+              <h1 className="lg:text-5xl text-4xl font-bold lg:text-justify p">About Samoon</h1>
+              <h1 className="lg:text-5xl text-4xl font-bold mb-5 lg:text-justify p"><span className="underline decoration- text-[#8CC264] decoration-4">Adarsh</span> Vidhyalaya</h1>
+              <p className="text-justify mb-3">Founded in the year 2021, Samoon Adarsh Vidhyalaya is a Hindi medium primary school that blends the best educational practices, driven by committed and truly modern educational concepts. We are highly passionate about developing our students’ learning so that they can fulfill all their ambitions and lead a better life. Offering the best possible primary education in an invigorating and inventive environment, we provide high-quality teaching with an individualistic approach that helps build our children’s strengths and talents.</p>
+              <p className="mb-5">So, let your child enjoy the bliss of learning!</p>
+              <button className="px-8 py-3 bg-[#8CC264] hover:bg-[#8dc264d8] rounded-lg text-white font-bold text-1xl">Reade More</button>
+            </div>
+          </div>
+        </section>
     </section>
   );
 }
