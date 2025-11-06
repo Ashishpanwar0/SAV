@@ -24,7 +24,7 @@ const AboutSchool = ({})=>{
             </div>
             </div>
         </section>
-        <SchooTeacher/>
+        {/* <SchooTeacher/> */}
         <Footer/>
         </>
     )

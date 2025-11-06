@@ -2,10 +2,10 @@ import React from "react";
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 // Import your teacher images
-import vijaypal from "../assets/SliderImages/SAV3.jpg";
-import harimohan from "../assets/SliderImages/SAV3.jpg";
-import vijaylal from "../assets/SliderImages/SAV3.jpg";
-import motilal from "../assets/SliderImages/SAV3.jpg";
+import vijaypal from "../assets/SamoonTeacher/Vijaypal.jpg";
+import harimohan from "../assets/SamoonTeacher/Hari-mohan-1.jpg";
+import vijaylal from "../assets/SamoonTeacher/male-icon.png";
+import motilal from "../assets/SamoonTeacher/motilal.jpg";
 
 const teachers = [
   {
@@ -21,13 +21,13 @@ const teachers = [
     socials: { facebook: "#", twitter: "#", instagram: "#", linkedin: "#" },
   },
   {
-    name: "Vijaylal Sharma",
+    name: "Vijay lal",
     position: "Science Teacher",
     img: vijaylal,
     socials: { facebook: "#", twitter: "#", instagram: "#", linkedin: "#" },
   },
   {
-    name: "Motilal Joshi",
+    name: "Motilal",
     position: "Hindi & Sanskrit",
     img: motilal,
     socials: { facebook: "#", twitter: "#", instagram: "#", linkedin: "#" },

@@ -102,18 +102,18 @@ export default function Navbar() {
                   <MenuLink to="/AboutSchool" onClick={closeAll}>
                     About School
                   </MenuLink>
-                  <MenuLink to="/principal-message" onClick={closeAll}>
+                  <MenuLink to="/PrincipalMessage" onClick={closeAll}>
                     Principal Message
                   </MenuLink>
-                  <MenuLink to="/chairman-message" onClick={closeAll}>
+                  <MenuLink to="/ChairmanMessage" onClick={closeAll}>
                     Chairman Message
                   </MenuLink>
                 </SubDropdown>
 
-                <MenuLink to="/about-samoon-foundation" onClick={closeAll}>
+                <MenuLink to="/AboutSam" onClick={closeAll}>
                   About Samoon Foundation
                 </MenuLink>
-                <MenuLink to="/our-visionary" onClick={closeAll}>
+                <MenuLink to="/Visinary" onClick={closeAll}>
                   Our Visionary
                 </MenuLink>
 
@@ -122,15 +122,15 @@ export default function Navbar() {
                   isOpen={subDropdown === "financial"}
                   onToggle={() => toggleSub("financial")}
                 >
-                  <MenuLink to="/financial-report" onClick={closeAll}>
-                    Financial Report
+                  <MenuLink to="/AnnualReport" onClick={closeAll}>
+                    Annual Report
                   </MenuLink>
-                  <MenuLink to="/audit-report" onClick={closeAll}>
+                  <MenuLink to="/AuditReport" onClick={closeAll}>
                     Audit Report
                   </MenuLink>
                 </SubDropdown>
 
-                <MenuLink to="/press-release" onClick={closeAll}>
+                <MenuLink to="/Press" onClick={closeAll}>
                   Press Release
                 </MenuLink>
               </Dropdown>
@@ -213,22 +213,22 @@ export default function Navbar() {
 
             <MobileDropdown label="ABOUT US">
               <MobileSubDropdown label="About SAV-Osla">
-                <MobileLink to="/about-school" onClick={closeAll}>About School</MobileLink>
-                <MobileLink to="/principal-message" onClick={closeAll}>Principal Message</MobileLink>
-                <MobileLink to="/chairman-message" onClick={closeAll}>Chairman Message</MobileLink>
+                <MobileLink to="/AboutSchool" onClick={closeAll}>About School</MobileLink>
+                <MobileLink to="/PrincipalMessage" onClick={closeAll}>Principal Message</MobileLink>
+                <MobileLink to="/ChairmanMessage" onClick={closeAll}>Chairman Message</MobileLink>
               </MobileSubDropdown>
 
-              <MobileLink to="/about-samoon-foundation" onClick={closeAll}>
+              <MobileLink to="/AboutSam" onClick={closeAll}>
                 About Samoon Foundation
               </MobileLink>
-              <MobileLink to="/our-visionary" onClick={closeAll}>Our Visionary</MobileLink>
+              <MobileLink to="/Visinary" onClick={closeAll}>Our Visionary</MobileLink>
 
               <MobileSubDropdown label="Financial Report">
-                <MobileLink to="/financial-report" onClick={closeAll}>Financial Report</MobileLink>
-                <MobileLink to="/audit-report" onClick={closeAll}>Audit Report</MobileLink>
+                <MobileLink to="/AnnualReport" onClick={closeAll}>Annual Report</MobileLink>
+                <MobileLink to="/AuditReport" onClick={closeAll}>Audit Report</MobileLink>
               </MobileSubDropdown>
 
-              <MobileLink to="/press-release" onClick={closeAll}>Press Release</MobileLink>
+              <MobileLink to="/press" onClick={closeAll}>Press Release</MobileLink>
             </MobileDropdown>
 
             <MobileDropdown label="ACADEMICS">
