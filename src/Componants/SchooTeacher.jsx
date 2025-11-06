@@ -80,7 +80,7 @@ export default function SchooTeacher() {
               {/* Info */}
               <div className="p-5">
                 <h3 className="text-lg font-bold text-gray-800 Nav-text">{teacher.name}</h3>
-                <p className="text-sm text-[#7FBA51] font-medium Nav-text">{teacher.position}</p>
+                <p className="text-1xl text-[#7FBA51] font-medium Sav-text">{teacher.position}</p>
               </div>
             </div>
           ))}

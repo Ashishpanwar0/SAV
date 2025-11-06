@@ -59,7 +59,7 @@ const Home = () => {
           <div className="text-center mt-6">
             <Link
               to=""
-              className="text-sm font-medium text-[#92C56C] hover:text-cyan-800 underline Body-text"
+              className="text-2xl font-medium text-[#92C56C] hover:text-cyan-800 underline Sav-text"
             >
               View Full Gallery →
             </Link>

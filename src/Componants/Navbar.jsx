@@ -110,7 +110,7 @@ export default function Navbar() {
                   </MenuLink>
                 </SubDropdown>
 
-                <MenuLink to="/AboutSam" onClick={closeAll}>
+                <MenuLink to="https://www.samoonfoundation.org/about-us.html" onClick={closeAll}>
                   About Samoon Foundation
                 </MenuLink>
                 <MenuLink to="/Visinary" onClick={closeAll}>
@@ -174,7 +174,7 @@ export default function Navbar() {
                 </MenuLink>
               </Dropdown>
 
-              <NavItem to="/photo-gallery" onClick={closeAll}>
+              <NavItem to="/PhotoGallery" onClick={closeAll}>
                 PHOTO GALLERY
               </NavItem>
 
@@ -246,7 +246,7 @@ export default function Navbar() {
               <MobileLink to="/awards" onClick={closeAll}>Awards</MobileLink>
             </MobileDropdown>
 
-            <MobileItem to="/photo-gallery" onClick={closeAll}>PHOTO GALLERY</MobileItem>
+            <MobileItem to="/PhotoGallery" onClick={closeAll}>PHOTO GALLERY</MobileItem>
 
             <MobileDropdown label="CONTACT US">
               <MobileLink to="/career-with-us" onClick={closeAll}>Career With Us</MobileLink>
