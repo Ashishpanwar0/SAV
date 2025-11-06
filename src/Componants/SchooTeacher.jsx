@@ -38,10 +38,10 @@ export default function SchooTeacher() {
   return (
     <section className="py-5 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-6 text-center">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+        <h1 className="Heading-text text-3xl md:text-4xl font-bold text-gray-800 mb-4">
           Our Expert <span className="underline decoration-[#7FBA51] decoration-4">Teachers</span>
         </h1>
-        <p className="text-gray-600 max-w-3xl mx-auto mb-12 text-sm md:text-base">
+        <p className="text-gray-600 max-w-3xl mx-auto mb-12 text-sm md:text-base Body-text">
           Dedicated educators who inspire, guide, and shape the future of every child with care and knowledge.
         </p>
         {/* Responsive Grid */}
@@ -79,8 +79,8 @@ export default function SchooTeacher() {
 
               {/* Info */}
               <div className="p-5">
-                <h3 className="text-lg font-bold text-gray-800">{teacher.name}</h3>
-                <p className="text-sm text-[#7FBA51] font-medium">{teacher.position}</p>
+                <h3 className="text-lg font-bold text-gray-800 Nav-text">{teacher.name}</h3>
+                <p className="text-sm text-[#7FBA51] font-medium Nav-text">{teacher.position}</p>
               </div>
             </div>
           ))}

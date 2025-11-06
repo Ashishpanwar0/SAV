@@ -29,7 +29,7 @@ const Home = () => {
       <Activities />
       <section className="py-5 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-8 Heading-text">
             Samoon Adarsh Vidhyala <span className="underline decoration-[#92C56C] text-[#92C56C]">Photo Gallary</span>
           </h2>
 
@@ -58,7 +58,7 @@ const Home = () => {
           <div className="text-center mt-6">
             <Link
               to=""
-              className="text-sm font-medium text-[#92C56C] hover:text-cyan-800 underline"
+              className="text-sm font-medium text-[#92C56C] hover:text-cyan-800 underline Body-text"
             >
               View Full Gallery →
             </Link>

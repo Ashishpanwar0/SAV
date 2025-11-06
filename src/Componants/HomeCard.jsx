@@ -73,17 +73,17 @@ export default function HomeCard() {
                 {/* Content */}
                 <div className="p-5">
                   <div className={`w-10 h-1 ${card.color} rounded-full mb-3`} />
-                  <h3 className="text-lg font-bold text-gray-800 mb-2">
+                  <h3 className="text-lg font-bold text-gray-800 mb-2 Heading-text">
                     {card.title}
                   </h3>
 
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-gray-600 leading-relaxed Body-text">
                     {open === i ? card.full : card.short}
                   </p>
 
                   <button
                     onClick={() => setOpen(open === i ? null : i)}
-                    className="mt-3 text-xs font-medium text-blue-600 hover:text-blue-800 underline"
+                    className="mt-3 text-xs font-medium text-blue-600 hover:text-blue-800 underline Nav-text"
                   >
                     {open === i ? "Show less" : "Read more"}
                   </button>
@@ -100,11 +100,11 @@ export default function HomeCard() {
               <img src={img3} alt="" className="rounded-xl"/>
             </div>
             <div className="lg:pt-1">
-              <h1 className="lg:text-5xl text-4xl font-bold lg:text-justify p">About Samoon</h1>
-              <h1 className="lg:text-5xl text-4xl font-bold mb-5 lg:text-justify p"><span className="underline decoration- text-[#8CC264] decoration-4">Adarsh</span> Vidhyalaya</h1>
-              <p className="text-justify mb-3">Founded in the year 2021, Samoon Adarsh Vidhyalaya is a Hindi medium primary school that blends the best educational practices, driven by committed and truly modern educational concepts. We are highly passionate about developing our students’ learning so that they can fulfill all their ambitions and lead a better life. Offering the best possible primary education in an invigorating and inventive environment, we provide high-quality teaching with an individualistic approach that helps build our children’s strengths and talents.</p>
+              <h1 className="lg:text-5xl text-4xl font-bold lg:text-justify p Heading-text">About Samoon</h1>
+              <h1 className="lg:text-5xl text-4xl font-bold mb-5 lg:text-justify p Heading-text"><span className="underline decoration- text-[#8CC264] decoration-4">Adarsh</span> Vidhyalaya</h1>
+              <p className="text-justify mb-3 Body-text">Founded in the year 2021, Samoon Adarsh Vidhyalaya is a Hindi medium primary school that blends the best educational practices, driven by committed and truly modern educational concepts. We are highly passionate about developing our students’ learning so that they can fulfill all their ambitions and lead a better life. Offering the best possible primary education in an invigorating and inventive environment, we provide high-quality teaching with an individualistic approach that helps build our children’s strengths and talents.</p>
               <p className="mb-5">So, let your child enjoy the bliss of learning!</p>
-              <button className="px-8 py-3 bg-[#8CC264] hover:bg-[#8dc264d8] rounded-lg text-white font-bold text-1xl">Reade More</button>
+              <button className="px-8 py-3 bg-[#8CC264] hover:bg-[#8dc264d8] rounded-lg text-white font-bold text-1xl Nav-text">Reade More</button>
             </div>
           </div>
         </section>

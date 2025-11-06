@@ -48,7 +48,7 @@ export default function Navbar() {
     <header ref={navRef} className="w-full z-50 bg-white">
       {/* Top Bar - Desktop Only */}
       <div className="hidden lg:block text-sm pt-2">
-        <div className="max-w-7xl mx-auto px-6 py-2 flex justify-end gap-8">
+        <div className="max-w-7xl mx-auto px-6 py-2 flex justify-end gap-8 Nav-text">
           <div className="flex items-center gap-2">
             <Phone className="w-4 h-4" />
             <span>+91-9027001689</span>
@@ -84,7 +84,7 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop Menu */}
-            <ul className="hidden lg:flex items-center gap-1 text-sm">
+            <ul className="hidden lg:flex items-center gap-1 text-sm Nav-text">
               <NavItem to="/" onClick={closeAll}>
                 HOME
               </NavItem>

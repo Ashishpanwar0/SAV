@@ -54,7 +54,7 @@ export default function Activities() {
   return (
     <section className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-4">
       {/* Hero Section */}
-      <div className="text-center p mb-5">
+      <div className="text-center p mb-5 Heading-text">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-8 px-5">
           Samoon Adarsh Vidhyalaya{" "}
           <span className="underline decoration-[#8CC264] decoration-4 text-[#8CC264]">
@@ -87,10 +87,10 @@ export default function Activities() {
                 >
                   {act.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">
+                <h3 className="text-xl font-bold text-gray-800 mb-2 Heading-text">
                   {act.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-600 text-sm leading-relaxed Body-text">
                   {act.desc}
                 </p>
               </div>
@@ -108,8 +108,8 @@ export default function Activities() {
             {/* Facebook Embed */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
               <div className="p-6  text-center">
-                <h3 className="text-xl font-bold mb-2">Facebook</h3>
-                <p className="text-sm opacity-90 text-[#92C56C]">Samoon Adarsh Vidyalaya</p>
+                <h3 className="text-xl font-bold mb-2 Heading-text">Facebook</h3>
+                <p className="text-sm opacity-90 text-[#92C56C] Body-text">Samoon Adarsh Vidyalaya</p>
               </div>
               <div className="p-4">
                 <div id="fb-root"></div>
@@ -145,8 +145,8 @@ export default function Activities() {
             {/* Instagram Embed */}
              <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
         <div className="p-6 text-center">
-          <h3 className="text-xl font-bold mb-2">Twitter</h3>
-          <p className="text-sm opacity-90 text-[#92C56C]">@samoonfoundation</p>
+          <h3 className="text-xl font-bold mb-2 Heading-text">Twitter</h3>
+          <p className="text-sm opacity-90 text-[#92C56C] Body-text">@samoonfoundation</p>
         </div>
         <div className="p-4 flex justify-center">
           <a
