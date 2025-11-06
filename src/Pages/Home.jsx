@@ -17,6 +17,7 @@ import img2 from "../assets/SliderImages/SAV2.webp";
 import img3 from "../assets/SliderImages/SAV3.jpg";
 import img4 from "../assets/SliderImages/SAV4.jpg";
 import img5 from "../assets/SliderImages/SAV5.jpg";
+import HomeContact from "../Componants/HomeContact.jsx";
 
 const galleryImages = [img1, img2, img3, img4, img5];
 
@@ -66,6 +67,7 @@ const Home = () => {
         </div>
       </section>
       <SchooTeacher/>
+      <HomeContact/>
       <Footer />
     </>
   );

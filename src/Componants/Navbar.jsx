@@ -99,7 +99,7 @@ export default function Navbar() {
                   isOpen={subDropdown === "sav"}
                   onToggle={() => toggleSub("sav")}
                 >
-                  <MenuLink to="/about-school" onClick={closeAll}>
+                  <MenuLink to="/AboutSchool" onClick={closeAll}>
                     About School
                   </MenuLink>
                   <MenuLink to="/principal-message" onClick={closeAll}>
