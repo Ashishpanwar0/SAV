@@ -44,7 +44,6 @@ export default function SchooTeacher() {
         <p className="text-gray-600 max-w-3xl mx-auto mb-12 text-sm md:text-base">
           Dedicated educators who inspire, guide, and shape the future of every child with care and knowledge.
         </p>
-
         {/* Responsive Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {teachers.map((teacher) => (
