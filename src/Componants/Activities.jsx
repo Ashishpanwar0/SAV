@@ -107,7 +107,7 @@ export default function Activities() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Facebook Embed */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="zoom-in-right">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
               <div className="p-6  text-center">
                 <h3 className="text-xl font-bold mb-2 Heading-text">
                   Facebook
@@ -148,7 +148,7 @@ export default function Activities() {
             </div>
 
             {/* Instagram Embed */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="zoom-in-left">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
               <div className="p-6 text-center">
                 <h3 className="text-xl font-bold mb-2 Heading-text">Twitter</h3>
                 <p className="text-sm opacity-90 text-[#92C56C] Body-text">
