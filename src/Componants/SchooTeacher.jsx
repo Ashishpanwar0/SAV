@@ -45,12 +45,12 @@ export default function SchooTeacher() {
           Dedicated educators who inspire, guide, and shape the future of every child with care and knowledge.
         </p>
         {/* Responsive Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" >
           {teachers.map((teacher) => (
             <div
               key={teacher.name}
               className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
-            >
+            data-aos="zoom-in">
               {/* Image */}
               <div className="relative overflow-hidden h-64">
                 <img

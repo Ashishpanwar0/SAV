@@ -70,6 +70,7 @@ export default function Activities() {
             <div
               key={i}
               className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+              data-aos="zoom-in"
             >
               {/* Image */}
               <div className="h-48 overflow-hidden">
@@ -106,10 +107,14 @@ export default function Activities() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Facebook Embed */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="zoom-in-right">
               <div className="p-6  text-center">
-                <h3 className="text-xl font-bold mb-2 Heading-text">Facebook</h3>
-                <p className="text-sm opacity-90 text-[#92C56C] Body-text">Samoon Adarsh Vidyalaya</p>
+                <h3 className="text-xl font-bold mb-2 Heading-text">
+                  Facebook
+                </h3>
+                <p className="text-sm opacity-90 text-[#92C56C] Body-text">
+                  Samoon Adarsh Vidyalaya
+                </p>
               </div>
               <div className="p-4">
                 <div id="fb-root"></div>
@@ -143,24 +148,29 @@ export default function Activities() {
             </div>
 
             {/* Instagram Embed */}
-             <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-        <div className="p-6 text-center">
-          <h3 className="text-xl font-bold mb-2 Heading-text">Twitter</h3>
-          <p className="text-sm opacity-90 text-[#92C56C] Body-text">@samoonfoundation</p>
-        </div>
-        <div className="p-4 flex justify-center">
-          <a
-            className="twitter-timeline"
-            data-theme="light"
-            data-height="500"
-            href="https://twitter.com/samoonfoundation?ref_src=twsrc%5Etfw"
-          >
-            Tweets by Samoon Foundation
-          </a>
-          <script async src="https://platform.twitter.com/widgets.js"></script>
-        </div>
-      </div>
-    </div>
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="zoom-in-left">
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-bold mb-2 Heading-text">Twitter</h3>
+                <p className="text-sm opacity-90 text-[#92C56C] Body-text">
+                  @samoonfoundation
+                </p>
+              </div>
+              <div className="p-4 flex justify-center">
+                <a
+                  className="twitter-timeline"
+                  data-theme="light"
+                  data-height="500"
+                  href="https://twitter.com/samoonfoundation?ref_src=twsrc%5Etfw"
+                >
+                  Tweets by Samoon Foundation
+                </a>
+                <script
+                  async
+                  src="https://platform.twitter.com/widgets.js"
+                ></script>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </section>

@@ -110,7 +110,7 @@ export default function Navbar() {
                   </MenuLink>
                 </SubDropdown>
 
-                <MenuLink to="https://www.samoonfoundation.org/about-us.html" onClick={closeAll}>
+                <MenuLink  to="#" onClick={() => window.open("https://www.samoonfoundation.org/about-us.html", "_blank")}>
                   About Samoon Foundation
                 </MenuLink>
                 <MenuLink to="/Visinary" onClick={closeAll}>
