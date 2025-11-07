@@ -143,7 +143,7 @@ export default function Navbar() {
                 <MenuLink to="/academic-facilities" onClick={closeAll}>
                   Academic Facilities
                 </MenuLink>
-                <MenuLink to="/our-teachers" onClick={closeAll}>
+                <MenuLink to="/Ourteacher" onClick={closeAll}>
                   Our Teachers
                 </MenuLink>
               </Dropdown>
@@ -233,7 +233,7 @@ export default function Navbar() {
 
             <MobileDropdown label="ACADEMICS">
               <MobileLink to="/academic-facilities" onClick={closeAll}>Academic Facilities</MobileLink>
-              <MobileLink to="/our-teachers" onClick={closeAll}>Our Teachers</MobileLink>
+              <MobileLink to="/Ourteacher" onClick={closeAll}>Our Teachers</MobileLink>
             </MobileDropdown>
 
             <MobileDropdown label="ADMISSION">

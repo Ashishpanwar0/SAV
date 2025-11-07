@@ -51,7 +51,7 @@ export default function Footer() {
           <div className="space-y-3 text-sm">
             <p className="flex items-start gap-2">
               <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 Nav-text" />
-              <span>C/O Vinita Devi Jethuri, Delhi Farm, Khadri Road, Shyampur, Rishikesh District - Dehradun, Uttarakhand - 249204</span>
+              <span>C/O - Vinod Singh Jethuri Khadri Road, Gali No. 1, Shyampur Fatak, Rishikesh, District - Dehradun, Uttarakhand - 249204</span>
             </p>
             <p className="flex items-center gap-2 Nav-text">
               <Phone className="w-4 h-4" />
