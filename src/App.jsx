@@ -13,6 +13,7 @@ import AuditReport from "./Pages/AuditReport";
 import Press from "./Pages/Press";
 import PhotoGallery from "./Pages/PhotoGallery";
 import Ourteacher from "./Pages/Ourteacher";
+import Academic from "./Pages/Accademic";
 
 function App() {
    useEffect(() => {
@@ -32,7 +33,8 @@ function App() {
     { path: "AnnualReport", element: <AnnualReport /> },
     { path: "AuditReport", element: <AuditReport /> },
     { path: "Press", element: <Press /> },
-    {path: "PhotoGallery", element: <PhotoGallery/>},
+    {path:"PhotoGallery", element: <PhotoGallery/>},
+    {path: "Accademic", element: <Academic/>},
     {path: "Ourteacher", element: <Ourteacher/>}
   ]);
 

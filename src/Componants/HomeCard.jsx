@@ -5,41 +5,44 @@ import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 
 import img1 from "../assets/SliderImages/SAV1.webp";
-import img2 from "../assets/SliderImages/SAV2.webp";
-import img3 from "../assets/SliderImages/SAV3.jpg";
-import img4 from "../assets/SliderImages/SAV4.jpg";
+import img2 from "../assets/Savgallary/sav (19).jpg";
+import img3 from "../assets/Savgallary/sav (12).jpg";
+import img4 from "../assets/Savgallary/sav (6).jpg";
+
+// about img
+import img5 from "../assets/Savgallary/sav (24).jpg"
 
 const cards = [
   {
     img: img1,
     title: "OUR PRESENCE",
     short:
-      "Samoon Adarsh Vidyalaya started in Osla village to bring modern education to remote Himalayan children.",
-    full: "Nestled in the serene mountains of Uttarkashi, our school was founded in 2018 by local educators and volunteers. We focus on holistic growth—academics, sports, arts, and life skills—so every child stays connected to their culture while preparing for the future.",
+      "Bringing quality education to the heart of the Himalayas, Samoon Adarsh Vidyalaya began its journey in Osla village to light the path of learning for every child.",
+    full: "Perched high in the peaceful ranges of Uttarkashi, Samoon Adarsh Vidyalaya was founded with a simple yet powerful dream - to make education accessible to children in remote mountain regions. What started as a small classroom now thrives as a center of learning and hope. We combine modern education with traditional values, helping our students grow in wisdom while staying rooted in their heritage and community.",
     color: "bg-green-500",
   },
   {
     img: img2,
     title: "EXPERT TEACHERS",
     short:
-      "Dedicated teachers give one-on-one attention and inspire curiosity in every student.",
-    full: "Our faculty includes trained graduates from Garhwal University and experienced mentors from Delhi. They teach not just subjects but values—discipline, empathy, and critical thinking. Weekly training keeps their methods fresh and effective.",
+      "Passionate mentors who teach from the heart, guiding every child with patience, dedication, and care.",
+    full: "Our teachers are the true pillars of Samoon Adarsh Vidyalaya. Each one brings deep knowledge, warmth, and a genuine desire to see students succeed. Trained in modern pedagogy yet grounded in moral values, they inspire curiosity and confidence in every learner. From personalized guidance to innovative teaching methods, our educators ensure that no child is left behind - nurturing both intellect and character with equal devotion.",
     color: "bg-rose-500",
   },
   {
     img: img3,
     title: "VISION & MISSION",
     short:
-      "We dream of confident, educated leaders who will uplift their villages.",
-    full: "Our vision is a literate, self-reliant mountain community. We run evening classes for adults, skill workshops for youth, and scholarships for higher studies. Every year, 10+ students join colleges outside the valley.",
+      "Shaping young minds into confident, capable, and compassionate leaders for tomorrow's world.",
+    full: "Our vision is to build a future where education empowers every mountain child to rise above limitations. We believe learning should open doors - not just to careers, but to courage, wisdom, and service. Through inclusive programs, skill training, and scholarships, we strive to create self-reliant individuals who uplift their families and communities. Our mission is not only to teach — but to transform lives through knowledge, empathy, and opportunity.",
     color: "bg-amber-500",
   },
   {
     img: img4,
     title: "COMMUNITY IMPACT",
     short:
-      "From clean water projects to digital literacy, we serve beyond the classroom.",
-    full: "We installed solar lights in Osla, started a library with 500+ books, and trained 50 women in tailoring. Students lead tree-plantation drives and health camps. Education here changes the entire village.",
+      "Education that extends beyond the classroom — uplifting families, empowering women, and strengthening the village.",
+    full: "Samoon Adarsh Vidyalaya stands at the heart of positive change in Osla and neighboring villages. Our students lead tree plantation drives, health awareness programs, and clean-water campaigns. We’ve established solar-powered classrooms, community libraries, and vocational training for women. Each initiative reflects our belief that true education inspires action - creating a ripple of hope that transforms not just students, but the entire community..",
     color: "bg-indigo-500",
   },
 ];
@@ -100,7 +103,7 @@ export default function HomeCard() {
       <section className="lg:px-5 px-5">
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 lg:px-5 lg:mt-10 h-auto">
           <div>
-            <img src={img3} alt="" className="rounded-xl" data-aos="zoom-in"/>
+            <img src={img5} alt="" className="rounded-xl" data-aos="zoom-in"/>
           </div>
           <div className="lg:pt-1">
             <h1 className="lg:text-5xl text-4xl font-bold lg:text-justify p Heading-text">

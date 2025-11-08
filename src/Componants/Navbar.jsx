@@ -140,7 +140,7 @@ export default function Navbar() {
                 isOpen={dropdown === "academics"}
                 onToggle={() => toggleDropdown("academics")}
               >
-                <MenuLink to="/academic-facilities" onClick={closeAll}>
+                <MenuLink to="/Accademic" onClick={closeAll}>
                   Academic Facilities
                 </MenuLink>
                 <MenuLink to="/Ourteacher" onClick={closeAll}>
@@ -232,7 +232,7 @@ export default function Navbar() {
             </MobileDropdown>
 
             <MobileDropdown label="ACADEMICS">
-              <MobileLink to="/academic-facilities" onClick={closeAll}>Academic Facilities</MobileLink>
+              <MobileLink to="/Accademic" onClick={closeAll}>Academic Facilities</MobileLink>
               <MobileLink to="/Ourteacher" onClick={closeAll}>Our Teachers</MobileLink>
             </MobileDropdown>
 

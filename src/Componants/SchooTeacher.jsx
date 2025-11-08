@@ -1,7 +1,5 @@
 import React from "react";
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
-
-// Import your teacher images
 import vijaypal from "../assets/SamoonTeacher/Vijaypal.jpg";
 import harimohan from "../assets/SamoonTeacher/Hari-mohan-1.jpg";
 import vijaylal from "../assets/SamoonTeacher/male-icon.png";
@@ -16,20 +14,20 @@ const teachers = [
   },
   {
     name: "Harimohan Rawat",
-    position: "Mathematics Teacher",
+    position: "Hindi Teacher",
     img: harimohan,
     socials: { facebook: "#", twitter: "#", instagram: "#", linkedin: "#" },
   },
   {
-    name: "Vijay lal",
-    position: "Science Teacher",
-    img: vijaylal,
+    name: "Moti Lal",
+    position: "Math Teacher",
+    img: motilal,
     socials: { facebook: "#", twitter: "#", instagram: "#", linkedin: "#" },
   },
   {
-    name: "Motilal",
-    position: "Hindi & Sanskrit",
-    img: motilal,
+    name: "Vijay Lal",
+    position: "Class Teacher",
+    img: vijaylal,
     socials: { facebook: "#", twitter: "#", instagram: "#", linkedin: "#" },
   },
 ];
@@ -41,11 +39,13 @@ export default function SchooTeacher() {
         <h1 className="Heading-text text-3xl md:text-4xl font-bold text-gray-800 mb-4">
           Our Expert <span className="underline decoration-[#7FBA51] decoration-4">Teachers</span>
         </h1>
-        <p className="text-gray-600 max-w-3xl mx-auto mb-12 text-sm md:text-base Body-text">
-          Dedicated educators who inspire, guide, and shape the future of every child with care and knowledge.
-        </p>
+        <p className="text-center max-w-6xl mx-auto text-gray-600 text-lg leading-relaxed">
+  Meet the dedicated mentors of <strong>Adarsh Vidyalaya</strong> - passionate educators who nurture curiosity, 
+  inspire creativity, and guide every student toward excellence. Their commitment, knowledge, and compassion 
+  form the foundation of the <span className="text-[#76B646] font-semibold">Samoon Family’s</span> success.
+</p>
         {/* Responsive Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:mt-10" >
           {teachers.map((teacher) => (
             <div
               key={teacher.name}
@@ -76,8 +76,6 @@ export default function SchooTeacher() {
                   </div>
                 </div>
               </div>
-
-              {/* Info */}
               <div className="p-5">
                 <h3 className="text-lg font-bold text-gray-800 Nav-text">{teacher.name}</h3>
                 <p className="text-1xl text-[#7FBA51] font-medium Sav-text">{teacher.position}</p>

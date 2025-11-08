@@ -2,8 +2,10 @@ import React from "react";
 import { Calendar, Users, Trophy, BookOpen, Heart, Camera } from "lucide-react";
 import img1 from "../assets/SliderImages/SAV1.webp";
 import img2 from "../assets/SliderImages/SAV2.webp";
-import img3 from "../assets/SliderImages/SAV3.jpg";
-import img4 from "../assets/SliderImages/SAV4.jpg";
+import img3 from "../assets/Savgallary/sav (4).jpg";
+import img4 from "../assets/Savgallary/sav (36).jpg";
+import img5 from "../assets/Savgallary/sav (30).jpg";
+import img6 from "../assets/Savgallary/sav (21).jpg"
 
 const activities = [
   {
@@ -18,7 +20,7 @@ const activities = [
     title: "Cultural Fest",
     desc: "Dance, drama, music, and art exhibitions. Children perform traditional and modern acts with pride.",
     color: "bg-pink-100",
-    img: img2,
+    img: img6,
   },
   {
     icon: <Trophy className="w-6 h-6 text-[#06B0EF]" />,
@@ -39,7 +41,7 @@ const activities = [
     title: "Community Service",
     desc: "Tree planting, village clean-up, and helping elders. We teach kindness and social responsibility.",
     color: "bg-emerald-100",
-    img: img4,
+    img: img5,
   },
   {
     icon: <Camera className="w-6 h-6 text-[#06B0EF]" />,
