@@ -9,6 +9,7 @@ const ContactUs = ({})=>{
         <>
         <Navbar/>
         <Secondslider bgImage={bgimg} title="Contact Us" subtitle=" Home / Contact Us"/>
+        <ContactUs/>
         <Footer/>
         </>
     )

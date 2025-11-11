@@ -18,6 +18,8 @@ import img3 from "../assets/SliderImages/SAV3.jpg";
 import img4 from "../assets/SliderImages/SAV4.jpg";
 import img5 from "../assets/SliderImages/SAV5.jpg";
 import HomeContact from "../Componants/HomeContact.jsx";
+import Partners from "../Componants/Partners.jsx";
+import EducationBenefits from "../Componants/EducationBenefits.jsx";
 
 const galleryImages = [img1, img2, img3, img4, img5];
 
@@ -30,10 +32,9 @@ const Home = () => {
       <Activities />
       <section className="py-5 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-8 Heading-text">
+          <h2 className="lg:text-4xl text-3xl font-bold text-center text-gray-800 mb-8 Heading-text">
             Samoon Adarsh Vidhyala <span className="underline decoration-[#92C56C] text-[#92C56C]">Photo Gallary</span>
           </h2>
-
           <Swiper
             modules={[Autoplay, Pagination]}
             spaceBetween={20}
@@ -66,7 +67,9 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <SchooTeacher/>
+      <EducationBenefits/>
+      <Partners/>
+      {/* <SchooTeacher/> */}
       <HomeContact/>
       <Footer />
     </>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import Footer from "../Componants/Footer";
 import Navbar from "../Componants/Navbar";
 import Secondslider from "../Componants/Secondslider";
-import headerimg from "../assets/SecondsliderImage/header.webp"
+import headerimg from "../assets/SecondsliderImage/header.webp";
 
 import img1 from "../assets/SamoonTeacher/VINOD-JETHURI.jpg";
 import img2 from "../assets/SamoonTeacher/RAMESH-INDRADUTT-NAITHANI.jpg";
@@ -59,12 +59,18 @@ export default function Visinary() {
   return (
     <>
       <Navbar />
-      <Secondslider bgImage={headerimg} title="Our Visionary" subtitle="Home/ Our Visionary"/>
-
+      <Secondslider
+        bgImage={headerimg}
+        title="Our Visionary"
+        subtitle="Home/ Our Visionary"
+      />
       <section className="py-10 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-3">
-            <span className="underline decoration-green-600 decoration-4 Heading-text">Management</span> Committee 
+            <span className="underline decoration-green-600 decoration-4 Heading-text">
+              Management
+            </span>{" "}
+            Committee
           </h1>
           <p className="text-gray-600 max-w-3xl mx-auto mb-10 text-sm md:text-base">
             Meet the people behind Samoon Foundation.
@@ -87,8 +93,12 @@ export default function Visinary() {
                 </div>
 
                 <div className="p-5 flex-1">
-                  <h3 className="text-lg font-bold text-gray-800 Heading-text">{person.name}</h3>
-                  <p className="text-xs text-gray-500 mt-1 Body-text">{person.phones.join(" | ")}</p>
+                  <h3 className="text-lg font-bold text-gray-800 Heading-text">
+                    {person.name}
+                  </h3>
+                  <p className="text-xs text-gray-500 mt-1 Body-text">
+                    {person.phones.join(" | ")}
+                  </p>
                   <div className="mt-3 inline-block px-4 py-1 text-1xl font-medium rounded-full Body-text">
                     {person.position}
                   </div>
