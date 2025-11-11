@@ -294,14 +294,19 @@ export default function Navbar() {
               PHOTO GALLERY
             </MobileItem>
 
-            <MobileDropdown label="CONTACT US">
-              <MobileLink to="/career-with-us" onClick={closeAll}>
-                Career With Us
-              </MobileLink>
-              <MobileLink to="/student-scholarship-form" onClick={closeAll}>
-                Student Scholarship Form
-              </MobileLink>
-            </MobileDropdown>
+            <MobileDropdown
+                label={
+                  <a href="/ContactUs" onClick={closeAll}>  
+                    CONTACT US
+                  </a>
+                }
+                isOpen={dropdown === "contact"}
+                onToggle={() => toggleDropdown("contact")}
+              >
+                <MenuLink to="/student-scholarship-form" onClick={closeAll}>
+                  Student Scholarship Form
+                </MenuLink>
+              </MobileDropdown>
           </div>
         </div>
       </nav>

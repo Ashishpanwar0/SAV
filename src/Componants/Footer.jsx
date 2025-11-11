@@ -72,11 +72,11 @@ export default function Footer() {
           <div className="flex items-center gap-4 Heading-text">
             <span className="Nav-text">Follow Us:</span>
             <div className="flex gap-3">
-              <a href="#" className="hover:text-orange-300 transition"><Facebook className="w-4 h-4" /></a>
-              <a href="#" className="hover:text-orange-300 transition"><Twitter className="w-4 h-4" /></a>
-              <a href="#" className="hover:text-orange-300 transition"><Instagram className="w-4 h-4" /></a>
-              <a href="#" className="hover:text-orange-300 transition"><Youtube className="w-4 h-4" /></a>
-              <a href="#" className="hover:text-orange-300 transition"><Linkedin className="w-4 h-4" /></a>
+              <a href="https://www.facebook.com/samooneducation" className="hover:text-orange-300 transition"><Facebook className="w-4 h-4" /></a>
+              <a href="https://x.com/samoon4humanity" className="hover:text-orange-300 transition"><Twitter className="w-4 h-4" /></a>
+              <a href="https://www.instagram.com/samoonfoundation/#" className="hover:text-orange-300 transition"><Instagram className="w-4 h-4" /></a>
+              <a href="https://www.youtube.com/samoonfoundation" className="hover:text-orange-300 transition"><Youtube className="w-4 h-4" /></a>
+              <a href="https://in.linkedin.com/company/samoonfoundation"><Linkedin className="w-4 h-4" /></a>
             </div>
           </div>
         </div>

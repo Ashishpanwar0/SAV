@@ -28,12 +28,15 @@ export default function HomeSlider() {
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {slides.map((img, i) => (
-          <div key={i} className="w-full flex-shrink-0">
+          <div key={i} className="w-full flex-shrink-0 relative">
+            {/* Image */}
             <img
               src={img}
               alt={`School moment ${i + 1}`}
               className="w-full h-full object-cover"
             />
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-[#00000054]"></div>
           </div>
         ))}
       </div>
