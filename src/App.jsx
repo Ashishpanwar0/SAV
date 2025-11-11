@@ -14,6 +14,7 @@ import Press from "./Pages/Press";
 import PhotoGallery from "./Pages/PhotoGallery";
 import Ourteacher from "./Pages/Ourteacher";
 import Academic from "./Pages/Accademic";
+import ContactUs from "./Pages/ContactUs";
 
 function App() {
    useEffect(() => {
@@ -35,7 +36,8 @@ function App() {
     { path: "Press", element: <Press /> },
     {path:"PhotoGallery", element: <PhotoGallery/>},
     {path: "Accademic", element: <Academic/>},
-    {path: "Ourteacher", element: <Ourteacher/>}
+    {path: "Ourteacher", element: <Ourteacher/>},
+    {path: "ContactUs", element: <ContactUs/>}
   ]);
 
   return <RouterProvider router={router} />;

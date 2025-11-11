@@ -59,7 +59,10 @@ export default function Navbar() {
           </div>
           <div className="flex items-center gap-2">
             <MapPin className="w-4 h-4" />
-            <span>Gangaad, Block - Mori, District - Uttarakashi, Uttarakhand, India 249185</span>
+            <span>
+              Gangaad, Block - Mori, District - Uttarakashi, Uttarakhand, India
+              249185
+            </span>
           </div>
         </div>
       </div>
@@ -110,7 +113,15 @@ export default function Navbar() {
                   </MenuLink>
                 </SubDropdown>
 
-                <MenuLink  to="#" onClick={() => window.open("https://www.samoonfoundation.org/about-us.html", "_blank")}>
+                <MenuLink
+                  to="#"
+                  onClick={() =>
+                    window.open(
+                      "https://www.samoonfoundation.org/about-us.html",
+                      "_blank"
+                    )
+                  }
+                >
                   About Samoon Foundation
                 </MenuLink>
                 <MenuLink to="/Visinary" onClick={closeAll}>
@@ -179,13 +190,14 @@ export default function Navbar() {
               </NavItem>
 
               <Dropdown
-                label="CONTACT US"
+                label={
+                  <a href="/ContactUs" onClick={closeAll}>  
+                    CONTACT US
+                  </a>
+                }
                 isOpen={dropdown === "contact"}
                 onToggle={() => toggleDropdown("contact")}
               >
-                <MenuLink to="/career-with-us" onClick={closeAll}>
-                  Career With Us
-                </MenuLink>
                 <MenuLink to="/student-scholarship-form" onClick={closeAll}>
                   Student Scholarship Form
                 </MenuLink>
@@ -197,7 +209,11 @@ export default function Navbar() {
               onClick={() => setMobileOpen(!mobileOpen)}
               className="lg:hidden p-2"
             >
-              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -209,47 +225,79 @@ export default function Navbar() {
           }`}
         >
           <div className="px-4 py-4 space-y-1 text-sm font-medium">
-            <MobileItem to="/" onClick={closeAll}>HOME</MobileItem>
+            <MobileItem to="/" onClick={closeAll}>
+              HOME
+            </MobileItem>
 
             <MobileDropdown label="ABOUT US">
               <MobileSubDropdown label="About SAV-Osla">
-                <MobileLink to="/AboutSchool" onClick={closeAll}>About School</MobileLink>
-                <MobileLink to="/PrincipalMessage" onClick={closeAll}>Principal Message</MobileLink>
-                <MobileLink to="/ChairmanMessage" onClick={closeAll}>Chairman Message</MobileLink>
+                <MobileLink to="/AboutSchool" onClick={closeAll}>
+                  About School
+                </MobileLink>
+                <MobileLink to="/PrincipalMessage" onClick={closeAll}>
+                  Principal Message
+                </MobileLink>
+                <MobileLink to="/ChairmanMessage" onClick={closeAll}>
+                  Chairman Message
+                </MobileLink>
               </MobileSubDropdown>
 
               <MobileLink to="/AboutSam" onClick={closeAll}>
                 About Samoon Foundation
               </MobileLink>
-              <MobileLink to="/Visinary" onClick={closeAll}>Our Visionary</MobileLink>
+              <MobileLink to="/Visinary" onClick={closeAll}>
+                Our Visionary
+              </MobileLink>
 
               <MobileSubDropdown label="Financial Report">
-                <MobileLink to="/AnnualReport" onClick={closeAll}>Annual Report</MobileLink>
-                <MobileLink to="/AuditReport" onClick={closeAll}>Audit Report</MobileLink>
+                <MobileLink to="/AnnualReport" onClick={closeAll}>
+                  Annual Report
+                </MobileLink>
+                <MobileLink to="/AuditReport" onClick={closeAll}>
+                  Audit Report
+                </MobileLink>
               </MobileSubDropdown>
 
-              <MobileLink to="/press" onClick={closeAll}>Press Release</MobileLink>
+              <MobileLink to="/press" onClick={closeAll}>
+                Press Release
+              </MobileLink>
             </MobileDropdown>
 
             <MobileDropdown label="ACADEMICS">
-              <MobileLink to="/Accademic" onClick={closeAll}>Academic Facilities</MobileLink>
-              <MobileLink to="/Ourteacher" onClick={closeAll}>Our Teachers</MobileLink>
+              <MobileLink to="/Accademic" onClick={closeAll}>
+                Academic Facilities
+              </MobileLink>
+              <MobileLink to="/Ourteacher" onClick={closeAll}>
+                Our Teachers
+              </MobileLink>
             </MobileDropdown>
 
             <MobileDropdown label="ADMISSION">
-              <MobileLink to="/registration-process" onClick={closeAll}>Registration Process</MobileLink>
-              <MobileLink to="/registration-form" onClick={closeAll}>Registration Form</MobileLink>
+              <MobileLink to="/registration-process" onClick={closeAll}>
+                Registration Process
+              </MobileLink>
+              <MobileLink to="/registration-form" onClick={closeAll}>
+                Registration Form
+              </MobileLink>
             </MobileDropdown>
 
             <MobileDropdown label="OUR ACHIEVEMENTS">
-              <MobileLink to="/certificates" onClick={closeAll}>Certificates</MobileLink>
-              <MobileLink to="/awards" onClick={closeAll}>Awards</MobileLink>
+              <MobileLink to="/certificates" onClick={closeAll}>
+                Certificates
+              </MobileLink>
+              <MobileLink to="/awards" onClick={closeAll}>
+                Awards
+              </MobileLink>
             </MobileDropdown>
 
-            <MobileItem to="/PhotoGallery" onClick={closeAll}>PHOTO GALLERY</MobileItem>
+            <MobileItem to="/PhotoGallery" onClick={closeAll}>
+              PHOTO GALLERY
+            </MobileItem>
 
             <MobileDropdown label="CONTACT US">
-              <MobileLink to="/career-with-us" onClick={closeAll}>Career With Us</MobileLink>
+              <MobileLink to="/career-with-us" onClick={closeAll}>
+                Career With Us
+              </MobileLink>
               <MobileLink to="/student-scholarship-form" onClick={closeAll}>
                 Student Scholarship Form
               </MobileLink>
@@ -264,7 +312,9 @@ export default function Navbar() {
 /* Reusable Components */
 const NavItem = ({ to, children, onClick }) => (
   <li className="px-4 py-3 hover:text-cyan-600 transition">
-    <Link to={to} onClick={onClick}>{children}</Link>
+    <Link to={to} onClick={onClick}>
+      {children}
+    </Link>
   </li>
 );
 
