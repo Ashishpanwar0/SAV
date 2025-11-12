@@ -190,18 +190,18 @@ export default function Navbar() {
               </NavItem>
 
               <Dropdown
-                label={
-                  <a href="/ContactUs" onClick={closeAll}>  
-                    CONTACT US
-                  </a>
-                }
-                isOpen={dropdown === "contact"}
-                onToggle={() => toggleDropdown("contact")}
-              >
-                <MenuLink to="/student-scholarship-form" onClick={closeAll}>
-                  Student Scholarship Form
-                </MenuLink>
-              </Dropdown>
+  label="CONTACT US"
+  isOpen={dropdown === "contact"}
+  onToggle={() => toggleDropdown("contact")}
+>
+  <MenuLink to="/ContactUs" onClick={closeAll}>
+    Contact Us
+  </MenuLink>
+  <MenuLink to="/student-scholarship-form" onClick={closeAll}>
+    Student Scholarship Form
+  </MenuLink>
+</Dropdown>
+
             </ul>
 
             {/* Mobile Toggle */}
@@ -294,19 +294,14 @@ export default function Navbar() {
               PHOTO GALLERY
             </MobileItem>
 
-            <MobileDropdown
-                label={
-                  <a href="/ContactUs" onClick={closeAll}>  
-                    CONTACT US
-                  </a>
-                }
-                isOpen={dropdown === "contact"}
-                onToggle={() => toggleDropdown("contact")}
-              >
-                <MenuLink to="/student-scholarship-form" onClick={closeAll}>
-                  Student Scholarship Form
-                </MenuLink>
-              </MobileDropdown>
+           <MobileDropdown label="CONTACT US">
+  <MobileLink to="/ContactUs" onClick={closeAll}>
+    Contact Us
+  </MobileLink>
+  <MobileLink to="/student-scholarship-form" onClick={closeAll}>
+    Student Scholarship Form
+  </MobileLink>
+</MobileDropdown>
           </div>
         </div>
       </nav>

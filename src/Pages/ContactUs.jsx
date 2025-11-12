@@ -1,4 +1,5 @@
 import Footer from "../Componants/Footer";
+import HomeContact from "../Componants/HomeContact";
 import Navbar from "../Componants/Navbar";
 import Secondslider from "../Componants/Secondslider";
 
@@ -9,7 +10,7 @@ const ContactUs = ({})=>{
         <>
         <Navbar/>
         <Secondslider bgImage={bgimg} title="Contact Us" subtitle=" Home / Contact Us"/>
-        <ContactUs/>
+        <HomeContact/>
         <Footer/>
         </>
     )

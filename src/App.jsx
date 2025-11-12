@@ -24,22 +24,22 @@ function App() {
       once: true,
     });
   }, []);
-  const router = createBrowserRouter([
-    { path: "/", element: <Home /> },
-    { path: "AboutSchool", element: <AboutSchool /> },
-    { path: "PrincipalMessage", element: <PrincipalMessage /> },
-    { path: "ChairmanMessage", element: <ChairmanMessage /> },
-    { path: "AboutSam", element: <AboutSamoon /> },
-    { path: "Visinary", element: <Visinary /> },
-    { path: "AnnualReport", element: <AnnualReport /> },
-    { path: "AuditReport", element: <AuditReport /> },
-    { path: "Press", element: <Press /> },
-    {path:"PhotoGallery", element: <PhotoGallery/>},
-    {path: "Accademic", element: <Academic/>},
-    {path: "Ourteacher", element: <Ourteacher/>},
-    {path: "ContactUs", element: <ContactUs/>}
+ const router = createBrowserRouter([
+  { path: "/", element: <Home /> },
+  { path: "/AboutSchool", element: <AboutSchool /> },
+  { path: "/PrincipalMessage", element: <PrincipalMessage /> },
+  { path: "/ChairmanMessage", element: <ChairmanMessage /> },
+  { path: "/AboutSam", element: <AboutSamoon /> },
+  { path: "/Visinary", element: <Visinary /> },
+  { path: "/AnnualReport", element: <AnnualReport /> },
+  { path: "/AuditReport", element: <AuditReport /> },
+  { path: "/Press", element: <Press /> },
+  { path: "/PhotoGallery", element: <PhotoGallery /> },
+  { path: "/Accademic", element: <Academic /> },
+  { path: "/Ourteacher", element: <Ourteacher /> },
+  { path: "/ContactUs", element: <ContactUs /> },
   ]);
-
+  
   return <RouterProvider router={router} />;
 }
 
