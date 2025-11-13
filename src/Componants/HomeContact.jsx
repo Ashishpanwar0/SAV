@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+// Php Code Start Here to link Backend
 const HomeContact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -38,8 +39,9 @@ const HomeContact = () => {
   };
 
   return (
+    // Contact main Code Start here
     <section className="pt-8">
-      <h1 className="lg:text-5xl text-4xl font-bold text-center Heading-text">
+      <h1 className="lg:text-4xl text-2xl font-bold text-center Heading-text">
         Contact{" "}
         <span className="underline decoration-4 decoration-[#7FBA51]">Us</span>
       </h1>

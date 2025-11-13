@@ -57,7 +57,7 @@ const AboutSchool = () => {
                 src={journeyImg1}
                 alt="Our Journey"
                 className="rounded-lg shadow-lg w-full h-auto"
-              />
+               data-aos="zoom-in"/>
             </div>
             <div className="">
               <h1 className="lg:text-5xl text-2xl font-bold text-[#7FBA51] mb-5 Heading-text">
@@ -91,7 +91,7 @@ const AboutSchool = () => {
                 src={journeyImg2}
                 alt="Beacon of Hope"
                 className="rounded-lg shadow-lg w-full h-auto"
-              />
+               data-aos="zoom-in"/>
             </div>
             <div>
               <h1 className="lg:text-4xl text-xl font-bold text-[#7FBA51] mb-4 Heading-text Heading-text">

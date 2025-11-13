@@ -7,21 +7,25 @@ const EducationBenefits = () => {
   const [startCount, setStartCount] = useState(false);
   const sectionRef = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (entry.isIntersecting) {
-          setStartCount(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.5 } 
-    );
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting) {
+        setStartCount(true);
+        observer.disconnect();
+      }
+    },
+    {
+      threshold: 0.2,       
+      rootMargin: "0px 0px -20% 0px"
+    }
+  );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
+  if (sectionRef.current) observer.observe(sectionRef.current);
+  return () => observer.disconnect();
+}, []);
+
 
   useEffect(() => {
     if (!startCount) return;
@@ -41,7 +45,7 @@ const EducationBenefits = () => {
   return (
     <section ref={sectionRef} className="bg-[#F9FAFB] py-15">
       <div className="relative max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
-        {/* Left */}
+        {/* Left Side Code start here  */}
         <div>
           <p className="text-[#0AB1F0] font-semibold Body-text">
             Importance of Education
@@ -66,7 +70,7 @@ const EducationBenefits = () => {
           </div>
         </div>
 
-        {/* Right */}
+        {/* Right  Side Code start here*/}
         <div className="grid sm:grid-cols-2 gap-5 bg-white p-6 rounded-2xl shadow-md">
           <div className="border rounded-xl p-5 hover:shadow-xl transition border-[#0AB1F0]">
             <BookOpen className="text-[#92C56C] h-8 w-8 mb-3" />

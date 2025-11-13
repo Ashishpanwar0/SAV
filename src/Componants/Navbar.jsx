@@ -10,14 +10,14 @@ export default function Navbar() {
   const [sticky, setSticky] = useState(false);
   const navRef = useRef(null);
 
-  // Sticky on scroll
+  // Sticky on scroll start here
   useEffect(() => {
     const handleScroll = () => setSticky(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close on outside click
+  // Close on outside click start here
   useEffect(() => {
     const close = (e) => {
       if (navRef.current && !navRef.current.contains(e.target)) {
@@ -46,7 +46,7 @@ export default function Navbar() {
 
   return (
     <header ref={navRef} className="w-full z-50 bg-white">
-      {/* Top Bar - Desktop Only */}
+      {/* Top Bar samoon contact detials  - Desktop Only view start here */}
       <div className="hidden lg:block text-sm pt-2">
         <div className="max-w-7xl mx-auto px-6 py-2 flex justify-end gap-8 Nav-text">
           <div className="flex items-center gap-2">
@@ -67,7 +67,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Main Navbar */}
+      {/* Main Navbar  Start here*/}
       <nav
         className={`${
           sticky
@@ -77,7 +77,7 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 lg:px-8 py-1">
           <div className="flex items-center justify-between h-16 lg:h-auto">
-            {/* Logo */}
+            {/* This is my logo section you can changes any time */}
             <Link to="/" onClick={closeAll}>
               <img
                 src={samoonlogo}
@@ -86,7 +86,7 @@ export default function Navbar() {
               />
             </Link>
 
-            {/* Desktop Menu */}
+            {/* Desktop Menu  Start Here*/}
             <ul className="hidden lg:flex items-center gap-1 text-sm Nav-text">
               <NavItem to="/" onClick={closeAll}>
                 HOME
@@ -159,18 +159,9 @@ export default function Navbar() {
                 </MenuLink>
               </Dropdown>
 
-              <Dropdown
-                label="ADMISSION"
-                isOpen={dropdown === "admission"}
-                onToggle={() => toggleDropdown("admission")}
-              >
-                <MenuLink to="/registration-process" onClick={closeAll}>
-                  Registration Process
-                </MenuLink>
-                <MenuLink to="/registration-form" onClick={closeAll}>
-                  Registration Form
-                </MenuLink>
-              </Dropdown>
+              <NavItem to="/RagistrationForm" onClick={closeAll}>
+                ADMISSION
+              </NavItem>
 
               <Dropdown
                 label="OUR ACHIEVEMENTS"
@@ -190,18 +181,25 @@ export default function Navbar() {
               </NavItem>
 
               <Dropdown
-  label="CONTACT US"
-  isOpen={dropdown === "contact"}
-  onToggle={() => toggleDropdown("contact")}
->
-  <MenuLink to="/ContactUs" onClick={closeAll}>
-    Contact Us
-  </MenuLink>
-  <MenuLink to="/student-scholarship-form" onClick={closeAll}>
-    Student Scholarship Form
-  </MenuLink>
-</Dropdown>
-
+                label="CONTACT US"
+                isOpen={dropdown === "contact"}
+                onToggle={() => toggleDropdown("contact")}
+              >
+                <MenuLink to="/ContactUs" onClick={closeAll}>
+                  Contact Us
+                </MenuLink>
+                <MenuLink
+                  to="#"
+                  onClick={() =>
+                    window.open(
+                      "https://www.samoonfoundation.org/student-scholarship-form.html",
+                      "_blank"
+                    )
+                  }
+                >
+                  Student Scholarship Form
+                </MenuLink>
+              </Dropdown>
             </ul>
 
             {/* Mobile Toggle */}
@@ -220,90 +218,110 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         <div
-          className={`lg:hidden fixed inset-x-0 top-16 bg-white shadow-xl transition-all duration-300 overflow-y-auto ${
-            mobileOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-          }`}
-        >
-          <div className="px-4 py-4 space-y-1 text-sm font-medium">
-            <MobileItem to="/" onClick={closeAll}>
-              HOME
-            </MobileItem>
+  className={`lg:hidden fixed inset-x-0 top-16 bg-white shadow-xl transition-all duration-300 overflow-y-auto ${
+    mobileOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+  }`}
+>
+  <div className="px-4 py-4 space-y-1 text-sm font-medium">
 
-            <MobileDropdown label="ABOUT US">
-              <MobileSubDropdown label="About SAV-Osla">
-                <MobileLink to="/AboutSchool" onClick={closeAll}>
-                  About School
-                </MobileLink>
-                <MobileLink to="/PrincipalMessage" onClick={closeAll}>
-                  Principal Message
-                </MobileLink>
-                <MobileLink to="/ChairmanMessage" onClick={closeAll}>
-                  Chairman Message
-                </MobileLink>
-              </MobileSubDropdown>
+    {/* HOME */}
+    <MobileItem to="/" onClick={closeAll}>
+      HOME
+    </MobileItem>
 
-              <MobileLink to="/AboutSam" onClick={closeAll}>
-                About Samoon Foundation
-              </MobileLink>
-              <MobileLink to="/Visinary" onClick={closeAll}>
-                Our Visionary
-              </MobileLink>
+    {/* ABOUT US */}
+    <MobileDropdown label="ABOUT US">
+      
+      <MobileSubDropdown label="About SAV-Osla">
+        <MobileLink to="/AboutSchool" onClick={closeAll}>
+          About School
+        </MobileLink>
+        <MobileLink to="/PrincipalMessage" onClick={closeAll}>
+          Principal Message
+        </MobileLink>
+        <MobileLink to="/ChairmanMessage" onClick={closeAll}>
+          Chairman Message
+        </MobileLink>
+      </MobileSubDropdown>
 
-              <MobileSubDropdown label="Financial Report">
-                <MobileLink to="/AnnualReport" onClick={closeAll}>
-                  Annual Report
-                </MobileLink>
-                <MobileLink to="/AuditReport" onClick={closeAll}>
-                  Audit Report
-                </MobileLink>
-              </MobileSubDropdown>
+      <MobileLink
+        to="#"
+        onClick={() =>
+          window.open(
+            "https://www.samoonfoundation.org/about-us.html",
+            "_blank")}>
+        About Samoon Foundation
+      </MobileLink>
 
-              <MobileLink to="/press" onClick={closeAll}>
-                Press Release
-              </MobileLink>
-            </MobileDropdown>
+      <MobileLink to="/Visinary" onClick={closeAll}>
+        Our Visionary
+      </MobileLink>
 
-            <MobileDropdown label="ACADEMICS">
-              <MobileLink to="/Accademic" onClick={closeAll}>
-                Academic Facilities
-              </MobileLink>
-              <MobileLink to="/Ourteacher" onClick={closeAll}>
-                Our Teachers
-              </MobileLink>
-            </MobileDropdown>
+      <MobileSubDropdown label="Financial Report">
+        <MobileLink to="/AnnualReport" onClick={closeAll}>
+          Annual Report
+        </MobileLink>
+        <MobileLink to="/AuditReport" onClick={closeAll}>
+          Audit Report
+        </MobileLink>
+      </MobileSubDropdown>
 
-            <MobileDropdown label="ADMISSION">
-              <MobileLink to="/registration-process" onClick={closeAll}>
-                Registration Process
-              </MobileLink>
-              <MobileLink to="/registration-form" onClick={closeAll}>
-                Registration Form
-              </MobileLink>
-            </MobileDropdown>
+      <MobileLink to="/press" onClick={closeAll}>
+        Press Release
+      </MobileLink>
+    </MobileDropdown>
 
-            <MobileDropdown label="OUR ACHIEVEMENTS">
-              <MobileLink to="/certificates" onClick={closeAll}>
-                Certificates
-              </MobileLink>
-              <MobileLink to="/awards" onClick={closeAll}>
-                Awards
-              </MobileLink>
-            </MobileDropdown>
+    {/* ACADEMICS */}
+    <MobileDropdown label="ACADEMICS">
+      <MobileLink to="/Accademic" onClick={closeAll}>
+        Academic Facilities
+      </MobileLink>
+      <MobileLink to="/Ourteacher" onClick={closeAll}>
+        Our Teachers
+      </MobileLink>
+    </MobileDropdown>
 
-            <MobileItem to="/PhotoGallery" onClick={closeAll}>
-              PHOTO GALLERY
-            </MobileItem>
+    {/* ADMISSION */}
+    <MobileItem to="/registration-form" onClick={closeAll}>
+      ADMISSION
+    </MobileItem>
 
-           <MobileDropdown label="CONTACT US">
-  <MobileLink to="/ContactUs" onClick={closeAll}>
-    Contact Us
-  </MobileLink>
-  <MobileLink to="/student-scholarship-form" onClick={closeAll}>
-    Student Scholarship Form
-  </MobileLink>
-</MobileDropdown>
-          </div>
-        </div>
+    {/* ACHIEVEMENTS */}
+    <MobileDropdown label="OUR ACHIEVEMENTS">
+      <MobileLink to="/certificates" onClick={closeAll}>
+        Certificates
+      </MobileLink>
+      <MobileLink to="/awards" onClick={closeAll}>
+        Awards
+      </MobileLink>
+    </MobileDropdown>
+
+    {/* GALLERY */}
+    <MobileItem to="/PhotoGallery" onClick={closeAll}>
+      PHOTO GALLERY
+    </MobileItem>
+
+    {/* CONTACT */}
+    <MobileDropdown label="CONTACT US">
+      <MobileLink to="/ContactUs" onClick={closeAll}>
+        Contact Us
+      </MobileLink>
+
+      <MobileLink
+        to="#"
+        onClick={() =>
+          window.open(
+            "https://www.samoonfoundation.org/student-scholarship-form.html",
+            "_blank"
+          )
+        }
+      >
+        Student Scholarship Form
+      </MobileLink>
+    </MobileDropdown>
+
+  </div>
+</div>
       </nav>
     </header>
   );

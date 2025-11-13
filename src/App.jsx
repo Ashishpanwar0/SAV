@@ -15,11 +15,13 @@ import PhotoGallery from "./Pages/PhotoGallery";
 import Ourteacher from "./Pages/Ourteacher";
 import Academic from "./Pages/Accademic";
 import ContactUs from "./Pages/ContactUs";
+import RagistrationForm from "./Pages/RagistrationForm";
+import NotFound from "./Pages/NotFound";
 
 function App() {
    useEffect(() => {
     AOS.init({
-      duration: 2000,
+      duration: 800,
       offset: 100,
       once: true,
     });
@@ -38,6 +40,9 @@ function App() {
   { path: "/Accademic", element: <Academic /> },
   { path: "/Ourteacher", element: <Ourteacher /> },
   { path: "/ContactUs", element: <ContactUs /> },
+  {path: "/RagistrationForm", element: <RagistrationForm/>},
+
+{ path: "*", element: <NotFound /> },
   ]);
   
   return <RouterProvider router={router} />;

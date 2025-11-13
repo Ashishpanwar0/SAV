@@ -82,7 +82,7 @@ export default function Visinary() {
                 key={i}
                 className="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col hover:-translate-y-2"
                 style={{ height: selected === person ? "auto" : "fit-content" }}
-              >
+               data-aos="zoom-in">
                 <div className="relative h-72">
                   <img
                     src={person.image}

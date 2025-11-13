@@ -7,8 +7,7 @@ import img2 from "../assets/SliderImages/SAV2.webp";
 import img3 from "../assets/Savgallary/sav (4).jpg";
 import img4 from "../assets/Savgallary/sav (36).jpg";
 import img5 from "../assets/Savgallary/sav (30).jpg";
-import img6 from "../assets/Savgallary/sav (21).jpg"
-
+import img6 from "../assets/Savgallary/sav (21).jpg";
 
 // Activity card Json here
 const activities = [
@@ -60,8 +59,8 @@ export default function Activities() {
   return (
     <section className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-4">
       {/* Hero Section start here */}
-      <div className="text-center p mb-5 Heading-text">
-        <h1 className="text-4xl lg:text-4xl font-bold text-gray-800 mb-8 px-5">
+      <div className="text-center p lg:mb-15 mb-6 Heading-text">
+        <h1 className="text-2xl lg:text-4xl font-bold text-gray-800 mb-8 px-5">
           Samoon Adarsh Vidhyalaya{" "}
           <span className="underline decoration-[#8CC264] decoration-4 text-[#8CC264]">
             Activities
@@ -69,7 +68,7 @@ export default function Activities() {
         </h1>
       </div>
 
-      {/* Activities Grid */}
+      {/* Activities Grid  start here*/}
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {activities.map((act, i) => (
@@ -87,7 +86,7 @@ export default function Activities() {
                 />
               </div>
 
-              {/* Content */}
+              {/* Content start here*/}
               <div className="p-6">
                 <div
                   className={`inline-flex p-3 rounded-full ${act.color} mb-4`}
@@ -102,7 +101,7 @@ export default function Activities() {
                 </p>
               </div>
 
-              {/* Hover Glow */}
+              {/* Hover Glow here */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
             </div>
           ))}
@@ -112,7 +111,7 @@ export default function Activities() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Facebook Embed */}
+            {/* Facebook Embed  start here*/}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
               <div className="p-6  text-center">
                 <h3 className="text-xl font-bold mb-2 Heading-text">
@@ -153,27 +152,28 @@ export default function Activities() {
               </div>
             </div>
 
-            {/* Instagram Embed */}
+            {/* Instagram Embed  Code start here*/}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
               <div className="p-6 text-center">
-                <h3 className="text-xl font-bold mb-2 Heading-text">Twitter</h3>
+                <h3 className="text-xl font-bold mb-2 Heading-text">
+                  Instagram
+                </h3>
                 <p className="text-sm opacity-90 text-[#92C56C] Body-text">
                   @samoonfoundation
                 </p>
               </div>
+
               <div className="p-4 flex justify-center">
-                <a
-                  className="twitter-timeline"
-                  data-theme="light"
-                  data-height="500"
-                  href="https://twitter.com/samoonfoundation?ref_src=twsrc%5Etfw"
-                >
-                  Tweets by Samoon Foundation
-                </a>
-                <script
-                  async
-                  src="https://platform.twitter.com/widgets.js"
-                ></script>
+                <iframe
+                  src="https://www.instagram.com/samoonfoundation/embed"
+                  width="100%"
+                  height="500"
+                  frameBorder="0"
+                  scrolling="no"
+                  allowTransparency="true"
+                  allow="encrypted-media"
+                  className="rounded-xl"
+                ></iframe>
               </div>
             </div>
           </div>

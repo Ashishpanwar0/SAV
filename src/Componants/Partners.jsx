@@ -4,13 +4,14 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-// patners imges import here
+// patners imges import here more imge import here
 import canva from "../assets/patnersphoto/canva.png";
 import google from "../assets/patnersphoto/google.png"
 import give from "../assets/patnersphoto/giveindia.png";
 import microsoft from "../assets/patnersphoto/microsoft.png";
 import chezuba from "../assets/patnersphoto/Chezuba.png";
 
+// Jsone file start here
 const partners = [
   { name: "Navjivan Center for Development", img: canva },
   { name: "TEPL", img: google },
@@ -23,7 +24,7 @@ const Partners = () => {
   return (
     <section className="py-12 bg-[#F9FAFB]">
       <div className="max-w-7xl mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-gray-800 mb-10 Heading-text">
+        <h2 className="lg:text-4xl text-2xl font-bold text-gray-800 mb-10 Heading-text">
           Meet Our <span className="underline decoration-3 decoration-[#92C57F]">Partners</span>
         </h2>
 

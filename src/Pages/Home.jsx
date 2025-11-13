@@ -1,25 +1,29 @@
 import React from "react";
 import {Link} from "react-router-dom";
+// swiper import here
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
+// import Componants here
 import Navbar from "../Componants/Navbar";
 import HomeSlider from "../Componants/HomeSlider";
 import HomeCard from "../Componants/HomeCard.jsx";
 import Footer from "../Componants/Footer.jsx";
 import Activities from "../Componants/Activities.jsx";
 import SchooTeacher from "../Componants/SchooTeacher.jsx";
-// Import your 5 images
+import HomeContact from "../Componants/HomeContact.jsx";
+import Partners from "../Componants/Partners.jsx";
+import EducationBenefits from "../Componants/EducationBenefits.jsx";
+// Import Gellary img here more img import here
 import img1 from "../assets/SliderImages/SAV1.webp";
 import img2 from "../assets/SliderImages/SAV2.webp";
 import img3 from "../assets/SliderImages/SAV3.jpg";
 import img4 from "../assets/SliderImages/SAV4.jpg";
 import img5 from "../assets/SliderImages/SAV5.jpg";
-import HomeContact from "../Componants/HomeContact.jsx";
-import Partners from "../Componants/Partners.jsx";
-import EducationBenefits from "../Componants/EducationBenefits.jsx";
+import StudentRegistration from "../Componants/StudentRegistration.jsx";
+
 
 const galleryImages = [img1, img2, img3, img4, img5];
 
@@ -30,9 +34,10 @@ const Home = () => {
       <HomeSlider />
       <HomeCard />
       <Activities />
+      {/* Home Photo Gallary Start Here */}
       <section className="py-5 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="lg:text-4xl text-3xl font-bold text-center text-gray-800 mb-8 Heading-text">
+          <h2 className="lg:text-4xl text-2xl font-bold text-center text-gray-800 mb-10 Heading-text">
             Samoon Adarsh Vidhyala <span className="underline decoration-[#92C56C] text-[#92C56C]">Photo Gallary</span>
           </h2>
           <Swiper
@@ -56,10 +61,10 @@ const Home = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-
+          {/* View All Photo Link Here */}
           <div className="text-center mt-6">
             <Link
-              to=""
+              to="/PhotoGallery"
               className="text-2xl font-medium text-[#92C56C] hover:text-cyan-800 underline Sav-text"
             >
               View Full Gallery →

@@ -34,7 +34,7 @@ export default function AnnualReport() {
               <div
                 key={i}
                 className="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer border border-[#000000b9]"
-              >
+               data-aos="zoom-in">
                 {/* PDF Icon */}
                 <div className="p-8 flex justify-center">
                   <div className="w-28 h-36 bg-white border-4 border-red-600 rounded-lg shadow-sm flex flex-col items-center justify-center group-hover:border-red-700 transition-colors">
