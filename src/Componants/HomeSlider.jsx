@@ -1,5 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
+
+// import img on this part you can change the slider imge here
 import SAV1 from "../assets/SliderImages/SAV1.webp";
 import SAV2 from "../assets/SliderImages/SAV2.webp";
 import SAV3 from "../assets/SliderImages/SAV3.jpg";
@@ -22,26 +24,26 @@ export default function HomeSlider() {
 
   return (
     <section className="relative w-full h-64 md:h-96 lg:h-[80vh] overflow-hidden bg-black">
-      {/* Slides */}
+      {/* Slider Start here */}
       <div
         className="flex h-full transition-transform duration-700 ease-in-out"
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {slides.map((img, i) => (
           <div key={i} className="w-full flex-shrink-0 relative">
-            {/* Image */}
+            {/* Img Part of this page  */}
             <img
               src={img}
               alt={`School moment ${i + 1}`}
               className="w-full h-full object-cover"
             />
-            {/* Overlay */}
+            {/* Overlay page on this page */}
             <div className="absolute inset-0 bg-[#00000054]"></div>
           </div>
         ))}
       </div>
 
-      {/* Arrows */}
+      {/* this is arrow code*/}
       <button
         onClick={prevSlide}
         className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-3 rounded-full transition-all"
@@ -62,7 +64,7 @@ export default function HomeSlider() {
         </svg>
       </button>
 
-      {/* Dots */}
+      {/* This is Dots Code  */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
         {slides.map((_, i) => (
           <button

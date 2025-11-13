@@ -2,24 +2,25 @@
 @import "tailwindcss";
 @import "swiper/css";
 
-.Heading-text{
-  font-family: "Outfit", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-};
-
-.Body-text{
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-};
-.Nav-text{
+.Heading-text {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-};
+}
 
-.Sav-text{
+.Body-text {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.Nav-text {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.Sav-text {
   font-family: "Dancing Script", cursive;
   font-optical-sizing: auto;
   font-style: normal;

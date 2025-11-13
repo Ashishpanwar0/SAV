@@ -1,17 +1,21 @@
 import React, { useState } from "react";
+import {Link} from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 
+//  this is card img and ad more img here for your code 
 import img1 from "../assets/SliderImages/SAV1.webp";
 import img2 from "../assets/Savgallary/sav (19).jpg";
 import img3 from "../assets/Savgallary/sav (12).jpg";
 import img4 from "../assets/Savgallary/sav (6).jpg";
 
-// about img
+// About Code img here 
 import img5 from "../assets/Savgallary/sav (24).jpg"
 
+
+// card json file start here
 const cards = [
   {
     img: img1,
@@ -67,7 +71,7 @@ export default function HomeCard() {
           {cards.map((card, i) => (
             <SwiperSlide key={i}>
               <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2" data-aos="zoom-in">
-                {/* Image */}
+                {/* Image  inster here*/}
                 <div className="h-48 overflow-hidden">
                   <img
                     src={card.img}
@@ -76,7 +80,7 @@ export default function HomeCard() {
                   />
                 </div>
 
-                {/* Content */}
+                {/* Content  ad on this part */}
                 <div className="p-5">
                   <div className={`w-10 h-1 ${card.color} rounded-full mb-3`} />
                   <h3 className="text-lg font-bold text-gray-800 mb-2 Heading-text">
@@ -99,17 +103,19 @@ export default function HomeCard() {
           ))}
         </Swiper>
       </div>
-      {/* About Samoon Adarsh Vidhyalaya */}
+
+      {/* About Samoon Adarsh Vidhyalaya part start here  any change any time*/}
       <section className="lg:px-5 px-5">
-        <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 lg:px-5 lg:mt-10 h-auto">
+        <div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 gap-10 lg:px-5 lg:mt-10 h-auto">
           <div>
+            {/* about card img is here */}
             <img src={img5} alt="" className="rounded-xl" data-aos="zoom-in"/>
           </div>
           <div className="lg:pt-1">
-            <h1 className="lg:text-5xl text-4xl font-bold lg:text-justify p Heading-text">
+            <h1 className="lg:text-4xl text-2xl font-bold lg:text-justify p Heading-text text-center">
               About Samoon
             </h1>
-            <h1 className="lg:text-5xl text-4xl font-bold mb-5 lg:text-justify p Heading-text">
+            <h1 className="lg:text-4xl text-2xl font-bold mb-5 lg:text-justify p Heading-text text-center">
               <span className="underline decoration- text-[#8CC264] decoration-4">
                 Adarsh
               </span>{" "}
@@ -129,9 +135,9 @@ export default function HomeCard() {
             <p className="mb-5">
               So, let your child enjoy the bliss of learning!
             </p>
-            <button className="px-8 py-3 bg-[#8CC264] hover:bg-[#8dc264d8] rounded-lg text-white font-bold text-1xl Nav-text">
+            <Link to="/AboutSchool"><button className="px-8 py-3 bg-[#8CC264] hover:bg-[#8dc264d8] rounded-lg text-white font-bold text-1xl Nav-text">
               Reade More
-            </button>
+            </button></Link>
           </div>
         </div>
       </section>

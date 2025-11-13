@@ -1,5 +1,7 @@
 import React from "react";
 import { Calendar, Users, Trophy, BookOpen, Heart, Camera } from "lucide-react";
+
+// import all img here for Activity card here
 import img1 from "../assets/SliderImages/SAV1.webp";
 import img2 from "../assets/SliderImages/SAV2.webp";
 import img3 from "../assets/Savgallary/sav (4).jpg";
@@ -7,6 +9,8 @@ import img4 from "../assets/Savgallary/sav (36).jpg";
 import img5 from "../assets/Savgallary/sav (30).jpg";
 import img6 from "../assets/Savgallary/sav (21).jpg"
 
+
+// Activity card Json here
 const activities = [
   {
     icon: <Calendar className="w-6 h-6 text-[#7FBA51]" />,
@@ -55,9 +59,9 @@ const activities = [
 export default function Activities() {
   return (
     <section className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-4">
-      {/* Hero Section */}
+      {/* Hero Section start here */}
       <div className="text-center p mb-5 Heading-text">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-8 px-5">
+        <h1 className="text-4xl lg:text-4xl font-bold text-gray-800 mb-8 px-5">
           Samoon Adarsh Vidhyalaya{" "}
           <span className="underline decoration-[#8CC264] decoration-4 text-[#8CC264]">
             Activities
