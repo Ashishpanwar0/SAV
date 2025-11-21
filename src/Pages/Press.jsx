@@ -5,15 +5,15 @@ import Footer from "../Componants/Footer";
 import bgimg from "../assets/SecondsliderImage/header.webp";
 
 // 👉 IMPORT ALL PRESS RELEASE IMAGES
-import p2021_1 from "/public/AuditReport/AUDIT-REPORT-2020-2021.jpg";
-import p2021_2 from "/public/AuditReport/AUDIT-REPORT-2020-2021.jpg";
+import p2021_1 from "../assets/Savgallary/sav (1).webp";
+import p2021_2 from "../assets/Savgallary/sav (1).webp";
 
-import p2022_1 from "/public/AuditReport/AUDIT-REPORT-2020-2021.jpg";
+import p2022_1 from "../assets/Savgallary/sav (1).webp";
 
-import p2023_1 from "/public/AuditReport/AUDIT-REPORT-2020-2021.jpg";
-import p2023_2 from "/public/AuditReport/AUDIT-REPORT-2020-2021.jpg";
+import p2023_1 from "../assets/Savgallary/sav (1).webp";
+import p2023_2 from "../assets/Savgallary/sav (1).webp";
 
-import p2024_1 from "/public/AuditReport/AUDIT-REPORT-2020-2021.jpg";
+import p2024_1 from "../assets/Savgallary/sav (1).webp";
 
 const Press = () => {
   // PRESS DATA FILL ON THIS PART AND YOU CAN ALSO  CHANGES DATA ON THIS PART AND AD NEW YEAR ALSO ON THIS PART

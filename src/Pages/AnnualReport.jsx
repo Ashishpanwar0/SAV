@@ -4,7 +4,7 @@ import Secondslider from "../Componants/Secondslider";
 import Annualimg from "../assets/SecondsliderImage/header.webp"
 
 const reports = [
-  { year: "2021-2022", pdf: "/public/AnnualReport/ANNUAL-REPORT-2021-2022.pdf" },
+  { year: "2021-2022", pdf: "/AnnualReport/ANNUAL-REPORT-2021-2022.pdf" },
   { year: "2022-2023", pdf: "/AnnualReport/ANNUAL-REPORT-2022-2023.pdf" },
   { year: "2023-2024", pdf: "/AnnualReport/ANNUAL-REPORT-2023-2024.pdf" },
   { year: "2024-2025", pdf: "/AnnualReport/ANNUAL-REPORT-2024-2025.pdf" },

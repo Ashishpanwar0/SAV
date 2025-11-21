@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ai-sdk/groq": "^2.0.31",
     "@tailwindcss/vite": "^4.1.14",
+    "ai": "^5.0.98",
     "aos": "^2.3.4",
     "lucide-react": "^0.552.0",
     "react": "^19.1.1",

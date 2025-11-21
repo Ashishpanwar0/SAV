@@ -6,7 +6,7 @@ import Footer from "../Componants/Footer";
 import bgimg from "../assets/SecondsliderImage/header.webp";
 
 // IMPORT AUDIT IMAGES
-import audit1 from "/public/AuditReport/AUDIT-REPORT-2020-2021.jpg";
+import audit1 from "../assets/AuditReport/AUDIT-REPORT-2020-2021.jpg";
 
 const AuditReport = () => {
   const [showImage, setShowImage] = useState(false);
